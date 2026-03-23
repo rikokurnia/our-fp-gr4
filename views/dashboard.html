@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HijauLokal - Katalog UMKM Lestari</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb778",
+                        "secondary-fixed": "#d4ec9e",
+                        "secondary-fixed-dim": "#b8cf84",
+                        "secondary": "#526527",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffd5b4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#00531f",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#703d00",
+                        "secondary-container": "#d4ec9e",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#00712d",
+                        "on-primary-container": "#93f29e",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#7ddb89",
+                        "primary-fixed-dim": "#7ddb89",
+                        "surface": "#fefae5",
+                        "background": "#fefae5",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f5f1dc",
+                        "outline": "#6f7a6d",
+                        "surface-container-high": "#ece9d4",
+                        "on-surface-variant": "#3f493e",
+                        "surface-variant": "#e7e3cf",
+                        "tertiary-container": "#925100",
+                        "on-surface": "#1d1c10",
+                        "surface-container": "#f2eeda",
+                        "primary-fixed": "#98f8a3",
+                        "on-primary-fixed": "#002108",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc1",
+                        "surface-dim": "#dedac6",
+                        "on-tertiary-fixed": "#2e1500",
+                        "on-secondary-fixed": "#141f00",
+                        "surface-tint": "#006e2b",
+                        "surface-container-low": "#f8f4df",
+                        "outline-variant": "#becabb",
+                        "inverse-surface": "#323123",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#576b2c",
+                        "primary": "#005620",
+                        "surface-container-highest": "#e7e3cf",
+                        "on-tertiary-fixed-variant": "#6c3a00",
+                        "on-secondary-fixed-variant": "#3b4d10",
+                        "surface-bright": "#fefae5",
+                        "on-background": "#1d1c10"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-logo { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full bg-[#FFFBE6]/90 dark:bg-[#1d1c10]/90 backdrop-blur-md z-50 border-b border-[#00712D]/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-6 md:px-8 lg:px-12 xl:px-16 py-4 w-full max-w-[1600px] mx-auto">
+<div class="flex items-center gap-10">
+<a href="index.html" class="text-2xl font-bold text-[#00712D] dark:text-[#D5ED9F] tracking-tight">HijauLokal</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Katalog</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Kategori</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Promo</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Tentang Kami</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-4 py-1.5 gap-2 group focus-within:ring-2 ring-primary">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-outline-variant" placeholder="Cari produk lokal..." type="text"/>
+</div>
+<button id="cart-btn" class="relative text-[#00712D] dark:text-[#D5ED9F] hover:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span id="cart-badge" class="absolute -top-1.5 -right-2 bg-error text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+</button>
+<a href="login.html" class="text-[#00712D] dark:text-[#D5ED9F] hover:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-32 w-full max-w-[1600px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 min-h-screen">
+<!-- User Greeting Section -->
+<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-3xl md:text-5xl font-extrabold text-primary mb-3">Halo, Budi Perkasa!</h1>
+<p class="text-secondary font-medium text-lg">Mulai jelajahi dan dukung karya pengrajin terbaik bumi nusantara hari ini.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low border border-outline-variant/20 px-6 py-4 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary-container/20 p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Saldo Poin Anda</p>
+<p class="text-2xl font-black text-primary leading-none">2.450 <span class="text-sm font-semibold opacity-80">Eco-Poin</span></p>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-8 xl:gap-12 w-full">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-[280px] xl:w-[320px] flex-shrink-0 space-y-8 lg:sticky lg:top-32 h-fit">
+<div class="bg-surface-container-low p-6 rounded-3xl space-y-6">
+<div>
+<h3 class="font-bold text-on-background mb-4 text-lg">Kategori</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Semua Produk</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Makanan &amp; Minuman</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Fashion Tradisional</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Kerajinan Tangan</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Kecantikan Organik</span>
+</label>
+</div>
+</div>
+<div class="pt-4">
+<h3 class="font-bold text-on-background mb-4 text-lg">Urutkan</h3>
+<select class="w-full bg-surface-container-highest border-none rounded-xl text-sm py-2.5 focus:ring-2 focus:ring-primary">
+<option>Terbaru</option>
+<option>Harga Terendah</option>
+<option>Harga Tertinggi</option>
+<option>Paling Populer</option>
+</select>
+</div>
+<div class="pt-4">
+<h3 class="font-bold text-on-background mb-4 text-lg">Rentang Harga</h3>
+<div class="space-y-4">
+<input class="w-full accent-primary" max="1000000" min="0" type="range"/>
+<div class="flex justify-between text-xs font-mono text-secondary">
+<span>Rp 0</span>
+<span>Rp 1jt+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Promo Banner Sidebar -->
+<div class="relative overflow-hidden rounded-3xl aspect-[4/5] bg-tertiary-container group shadow-lg border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-700" data-alt="Close up of traditional Indonesian batik pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxj2JYi0woY6aNb5ztyy4rBh6Ow2QYxLzEA8iY0ExaCDqzKuU108hwxoy9-e7_YTMezX7TaSrHi-alnHor9fXzXKLPt2VHTxaLHjWlEi9Z59HTJHqwp9hTEh52snuGKBeWu9EjPKZhMSdWCcJ1kh7UG5bmVugxCuqVToRFTe1ROYZh9qMRn9NX7FghA22eUGAM_cgA7ScDNBh0wBjoy5o306zj3qBsbZGjSsd5ZIxMnpTEFJWFvfarBXJQgwJ4whDrJGZUtMcSDZ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+<span class="bg-[#FF9100] text-white font-bold text-[10px] px-3 py-1.5 rounded-full uppercase tracking-widest mb-4 w-fit shadow-md">Edisi Terbatas</span>
+<h4 class="text-white text-2xl font-bold mb-5 leading-tight">Batik Tulis Eksklusif Pekalongan</h4>
+<button class="bg-white text-tertiary px-6 py-3 rounded-xl text-sm font-bold w-fit hover:bg-tertiary-fixed transition-colors shadow-lg active:scale-95 flex items-center gap-2 group/btn">
+    Lihat Koleksi 
+    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Product Grid Content -->
+<section class="flex-1 min-w-0">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-6 border-b border-outline-variant/20 gap-4">
+<h2 class="text-2xl font-extrabold text-on-background flex items-center gap-3">Katalog Produk <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-bold">128 Tersedia</span></h2>
+<div class="flex gap-2">
+<button class="p-2.5 bg-surface-container-highest rounded-xl text-primary shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined font-bold">grid_view</span>
+</button>
+<button class="p-2.5 bg-transparent rounded-xl text-outline-variant hover:bg-surface-container hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 xl:gap-8">
+    <!-- Products will be injected here dynamically by app.js -->
+</div>
+<!-- Pagination -->
+<nav class="mt-12 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-white font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-secondary-container transition-colors">2</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-secondary-container transition-colors">3</button>
+<span class="text-outline-variant px-2">...</span>
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-secondary-container transition-colors">12</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-[#FFFBE6]/80 dark:bg-[#1d1c10]/80 backdrop-blur-md rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)]">
+<button class="flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-medium mt-1">Beranda</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#D5ED9F] dark:bg-[#00712D] text-[#00712D] dark:text-[#fefae5] rounded-2xl px-5 py-2 scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-inter text-[10px] font-medium mt-1">Katalog</span>
+</button>
+<button id="mobile-cart-btn" class="relative flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-inter text-[10px] font-medium mt-1">Keranjang</span>
+<span id="mobile-cart-badge" class="absolute top-1 right-3 bg-error text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-medium mt-1">Akun</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full bg-[#dedac6] dark:bg-[#1d1c10] mt-auto md:mt-24 border-t border-secondary/10 shadow-inner pb-24 md:pb-0 relative z-40">
+<div class="w-full max-w-[1600px] mx-auto py-12 px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-3">
+<a href="index.html" class="text-2xl font-extrabold text-[#00712D] tracking-tight">HijauLokal</a>
+<p class="font-inter text-sm text-[#526527] dark:text-[#dedac6] max-w-sm text-center md:text-left leading-relaxed">© 2024 HijauLokal. Mendukung karya anak bangsa menuju ekosistem UMKM lestari dan berkelanjutan.</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 flex-1">
+<a class="font-inter text-sm font-semibold text-[#526527] dark:text-[#dedac6] hover:text-[#FF9100] transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-inter text-sm font-semibold text-[#526527] dark:text-[#dedac6] hover:text-[#FF9100] transition-colors" href="#">Kebijakan Privasi</a>
+<a class="font-inter text-sm font-semibold text-[#526527] dark:text-[#dedac6] hover:text-[#FF9100] transition-colors" href="#">Hubungi Kami</a>
+<a class="font-inter text-sm font-semibold text-[#526527] dark:text-[#dedac6] hover:text-[#FF9100] transition-colors" href="#">Pusat Bantuan</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center bg-[#00712D] text-white rounded-full hover:bg-primary shadow-lg hover:-translate-y-1 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">language</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-[#00712D] text-white rounded-full hover:bg-primary shadow-lg hover:-translate-y-1 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</button>
+</div>
+</div>
+</footer>
+
+<!-- Shopping Cart Drawer Overlay -->
+<div id="cart-overlay" class="fixed inset-0 bg-black/60 z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+<!-- Shopping Cart Drawer -->
+<div id="cart-drawer" class="fixed top-0 right-0 w-full md:w-[450px] h-full bg-surface-container-lowest shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header -->
+    <div class="px-6 py-5 border-b border-outline-variant/20 flex items-center justify-between bg-surface-container-low">
+        <h2 class="text-xl font-extrabold font-headline text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_basket</span> Keranjang
+        </h2>
+        <button id="close-cart-btn" class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant transition-colors active:scale-95">
+            <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+    </div>
+    
+    <!-- Cart Items Container -->
+    <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- JS injected items go here -->
+    </div>
+    
+    <!-- Shipping Simulation -->
+    <div class="px-6 py-5 bg-surface-container-low border-t border-outline-variant/20">
+        <h3 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">local_shipping</span> Estimasi Pengiriman</h3>
+        <div class="flex gap-2">
+            <select id="shipping-city" class="flex-1 bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-sm focus:ring-2 focus:ring-primary h-11 px-3 text-on-surface">
+                <option value="">Pilih Kota Tujuan</option>
+                <option value="jakarta">DKI Jakarta</option>
+                <option value="bandung">Bandung, Jawa Barat</option>
+                <option value="surabaya">Surabaya, Jawa Timur</option>
+                <option value="medan">Medan, Sumatera Utara</option>
+                <option value="makassar">Makassar, Sulawesi Selatan</option>
+            </select>
+            <button id="calc-shipping-btn" class="bg-primary text-on-primary px-5 rounded-xl text-sm font-bold hover:bg-on-primary-fixed-variant transition-colors active:scale-95">Cek</button>
+        </div>
+        <div class="mt-3 flex justify-between items-center text-sm" id="shipping-result-row">
+            <span class="text-on-surface-variant">Ongkos Kirim:</span>
+            <span id="shipping-cost-display" class="font-bold text-secondary">Rp 0</span>
+        </div>
+    </div>
+
+    <!-- Footer Checkout -->
+    <div class="p-6 border-t border-outline-variant/20 bg-surface-container-lowest shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-between items-center mb-4">
+            <p class="text-on-surface-variant font-medium text-sm">Total Belanja</p>
+            <p id="cart-subtotal" class="text-lg font-bold text-on-surface">Rp 0</p>
+        </div>
+        <div class="flex justify-between items-center mb-6 pt-4 border-t border-outline-variant/20">
+            <p class="text-on-surface-variant font-extrabold text-lg">Total Akhir</p>
+            <p id="cart-total" class="text-2xl font-black text-[#FF9100]">Rp 0</p>
+        </div>
+        <button id="checkout-btn" class="w-full bg-[#FF9100] text-white py-4 rounded-2xl font-bold hover:brightness-105 transition-all shadow-lg shadow-[#FF9100]/30 active:scale-95 text-lg flex justify-center items-center gap-2">
+            Selesaikan Beli <span class="material-symbols-outlined text-[20px]">check_circle</span>
+        </button>
+    </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body></html>

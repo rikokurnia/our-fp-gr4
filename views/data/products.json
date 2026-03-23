@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tote Bag Eceng Gondok",
+      "price": 45000,
+      "description": "Tote bag ramah lingkungan dari serat eceng gondok alami.",
+      "image": "https://images.unsplash.com/photo-1597484661643-2f5fef640df1?w=400&h=400&fit=crop",
+      "category": "fashion",
+      "eco": true,
+      "weight": 0.3
+    },
+    {
+      "id": 2,
+      "name": "Sedotan Bambu Reusable",
+      "price": 15000,
+      "description": "Satu set sedotan bambu lengkap dengan sikat pembersih.",
+      "image": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=400&h=400&fit=crop",
+      "category": "home",
+      "eco": true,
+      "weight": 0.1
+    },
+    {
+      "id": 3,
+      "name": "Sabun Mandi Organik",
+      "price": 35000,
+      "description": "Sabun mandi batangan dari bahan organik tanpa bahan kimia berbahaya.",
+      "image": "https://images.unsplash.com/photo-1600857062241-9a9972b22ec3?w=400&h=400&fit=crop",
+      "category": "beauty",
+      "eco": true,
+      "weight": 0.2
+    },
+    {
+      "id": 4,
+      "name": "Piring Kayu Jati",
+      "price": 85000,
+      "description": "Piring makan elegan dari kayu jati bersertifikat FSC yang tahan lama.",
+      "image": "https://images.unsplash.com/photo-1610708687365-c23562a98f82?w=400&h=400&fit=crop",
+      "category": "home",
+      "eco": true,
+      "weight": 0.5
+    },
+    {
+      "id": 5,
+      "name": "Tas Belanja Jaring Kain",
+      "price": 25000,
+      "description": "Tas jaring serbaguna pengganti kantong plastik sekali pakai.",
+      "image": "https://images.unsplash.com/photo-1585250044569-8094daeee11c?w=400&h=400&fit=crop",
+      "category": "fashion",
+      "eco": true,
+      "weight": 0.2
+    },
+    {
+      "id": 6,
+      "name": "Shampoo Bar Natural",
+      "price": 40000,
+      "description": "Shampo padat ramah lingkungan, bebas kemasan plastik.",
+      "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+      "category": "beauty",
+      "eco": true,
+      "weight": 0.15
+    },
+    {
+      "id": 7,
+      "name": "Tumbler Bambu Stainless",
+      "price": 120000,
+      "description": "Botol minum stylish dari lapisan bambu dan stainless steel.",
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop",
+      "category": "home",
+      "eco": true,
+      "weight": 0.4
+    },
+    {
+      "id": 8,
+      "name": "Kemeja Rami Organik",
+      "price": 250000,
+      "description": "Kemeja kasual yang terbuat dari 100% serat rami alami.",
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop",
+      "category": "fashion",
+      "eco": true,
+      "weight": 0.35
+    },
+    {
+      "id": 9,
+      "name": "Sikat Gigi Bambu",
+      "price": 12000,
+      "description": "Sikat gigi ramah lingkungan yang dapat dikomposkan setelah dipakai.",
+      "image": "https://images.unsplash.com/photo-1510620353114-1e0dc42ae583?w=400&h=400&fit=crop",
+      "category": "beauty",
+      "eco": true,
+      "weight": 0.05
+    },
+    {
+      "id": 10,
+      "name": "Mangkok Kelapa",
+      "price": 45000,
+      "description": "Mangkok cantik dari tempurung kelapa asli untuk smoothie bowl.",
+      "image": "https://images.unsplash.com/photo-1596541671569-ae9709ea52f6?w=400&h=400&fit=crop",
+      "category": "home",
+      "eco": true,
+      "weight": 0.25
+    },
+    {
+      "id": 11,
+      "name": "Lilin Aromaterapi Kedelai",
+      "price": 60000,
+      "description": "Lilin relaksasi terbuat dari 100% soy wax alami tanpa asap hitam.",
+      "image": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?w=400&h=400&fit=crop",
+      "category": "home",
+      "eco": true,
+      "weight": 0.3
+    },
+    {
+      "id": 12,
+      "name": "Pelembab Wajah Vegan",
+      "price": 95000,
+      "description": "Krim pelembab cruelty-free dengan ekstrak lidah buaya organik.",
+      "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+      "category": "beauty",
+      "eco": true,
+      "weight": 0.1
+    }
+  ]
+}

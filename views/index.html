@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HijauLokal | Kurasi UMKM Lestari</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#ffb778",
+              "secondary-fixed": "#d4ec9e",
+              "secondary-fixed-dim": "#b8cf84",
+              "secondary": "#526527",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#ffd5b4",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#00531f",
+              "on-primary": "#ffffff",
+              "tertiary": "#703d00",
+              "secondary-container": "#d4ec9e",
+              "error-container": "#ffdad6",
+              "primary-container": "#00712d",
+              "on-primary-container": "#93f29e",
+              "error": "#ba1a1a",
+              "inverse-primary": "#7ddb89",
+              "primary-fixed-dim": "#7ddb89",
+              "surface": "#fefae5",
+              "background": "#fefae5",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f5f1dc",
+              "outline": "#6f7a6d",
+              "surface-container-high": "#ece9d4",
+              "on-surface-variant": "#3f493e",
+              "surface-variant": "#e7e3cf",
+              "tertiary-container": "#925100",
+              "on-surface": "#1d1c10",
+              "surface-container": "#f2eeda",
+              "primary-fixed": "#98f8a3",
+              "on-primary-fixed": "#002108",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ffdcc1",
+              "surface-dim": "#dedac6",
+              "on-tertiary-fixed": "#2e1500",
+              "on-secondary-fixed": "#141f00",
+              "surface-tint": "#006e2b",
+              "surface-container-low": "#f8f4df",
+              "outline-variant": "#becabb",
+              "inverse-surface": "#323123",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#576b2c",
+              "primary": "#005620",
+              "surface-container-highest": "#e7e3cf",
+              "on-tertiary-fixed-variant": "#6c3a00",
+              "on-secondary-fixed-variant": "#3b4d10",
+              "surface-bright": "#fefae5",
+              "on-background": "#1d1c10"
+            },
+            fontFamily: {
+              "headline": ["Poppins", "Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .product-card:hover .cart-button {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+      }
+      .animate-float-1 { animation: float 6s ease-in-out infinite; }
+      .animate-float-2 { animation: float 5s ease-in-out infinite 1s; }
+      .animate-float-3 { animation: float 7s ease-in-out infinite 2s; }
+      .animate-float-4 { animation: float 4s ease-in-out infinite 0.5s; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased pb-16 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 glass-nav bg-[#FFFBE6]/90 border-b border-[#00712D]/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-6 md:px-8 lg:px-12 xl:px-16 py-4 w-full max-w-[1600px] mx-auto">
+<a href="index.html" class="text-2xl font-extrabold text-[#00712D] tracking-tight font-headline hover:scale-105 transition-transform cursor-pointer inline-block">HijauLokal</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-[#00712D] font-bold border-b-2 border-[#00712D] transition-opacity duration-300 cursor-pointer" href="#">Katalog</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Kategori</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Promo</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Tentang Kami</a>
+</nav>
+<div class="flex items-center">
+<a href="login.html" class="bg-[#FF9100] text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 hover:brightness-105 shadow-md">
+                Masuk
+            </a>
+</div>
+</div>
+</header>
+<main class="pt-32 md:pt-40">
+<!-- Hero Section -->
+<section class="px-6 md:px-8 lg:px-12 xl:px-16 py-12 md:py-32 w-full max-w-[1600px] mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-fixed/50 border border-secondary/20 text-on-secondary-container font-medium text-xs md:text-sm mb-8 shadow-[0_0_15px_rgba(212,236,158,0.5)]">
+    <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+    Platform UMKM Lestari #1 di Indonesia
+</div>
+<h1 class="font-headline text-5xl sm:text-6xl xl:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight text-on-background">
+    Langkah Kecil Anda,<br>
+    <span class="text-primary relative inline-block mt-2">
+        Sejahterakan UMKM
+        <svg class="absolute w-full h-4 -bottom-1 left-0 text-secondary-fixed-dim -z-10" fill="currentColor" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q50,20 100,10 L100,20 L0,20 Z"></path></svg>
+    </span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-lg mb-10 leading-relaxed font-medium">
+    Bergabunglah dengan ekosistem kebaikan HijauLokal. Temukan dan dukung produk artisan ramah lingkungan langsung dari tangan pengrajin.
+</p>
+<div class="flex flex-wrap gap-4 mt-8">
+<a href="dashboard.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:bg-on-primary-fixed-variant flex items-center gap-2">
+    Mulai Belanja Hijau <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<button class="bg-surface-container-high text-primary px-8 py-4 rounded-xl font-bold border border-outline-variant/20 hover:bg-surface-container-highest transition-colors shadow-sm hover:shadow-md flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm">play_circle</span> Cara Kerja
+</button>
+</div>
+<div class="mt-12 flex items-center gap-6">
+    <div class="flex -space-x-3">
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2H06z3krBnIpF_P-lIMRt7S9ejrMjSsd2JbKY2fmqMoQE5yVc3ZbbwNv-izaUf9a46NXuFmpYVJ2wcmae3-msZrbMiI-gH8T3oCu2L9tD1mIaAcvznlF8fhSL9B8H1BYbXUsHDDoPnrGIVYy1TlH_hng-TgYcOpzD-05v3DJ0ypg4DN2ruUzG58BUfteDUqIGOxBs3L2Qs6JWqRdGLQQ5pNstjMipINdA-8xTM7QWeHLeSD9Ybu_Rn4CFSW0_oODZSJE1cgYnpDQ"/>
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmJx_MKC4nTsZtB4t7JDwq2GJHB3_tD8OP4YHR1YjZUGNTZBHFnc7vz8ZIaoosJnBnrBsQAb7zEtxQmdgexiSpKGCGoz-AUhH-h9k6NFgXHWmso_nQn6lHssv-q0Zeq9w3kaUOBo_HHwVVsiBVbyPZLjT7HrX-xFZ1Tfuq6ofSe6aV3hQ7p2fk0ESRbhzYSsFbgvdMRtLm73QzXGfyPwY03t6BHEK_o-WW_SEIBfPd0zNRNKl23-8Jil6HFVEjuEfC7Zg3TeGVpQ"/>
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzISYmS4gQuwVyXgf-p82SPwe0vxjIIE1Y_IgcswMN0h9hDJZ2vQtUA60FnnQctfU-zdO_EsmJtrzbvN6IyDtE6sPdU3XmF52VGRL6qEJeYIDCQWHzEV5pB5ToCLGawOqUQm-ej_4VaE2mUecyG89rcjmkDdR4DDh8BTeqqVPwdu4A5PjLx7Xu8n9V2D7Q-QkeKkLxvv2CDo-EPmWgALyVku3Ovf990Je0I5WS6afU7bezAT2mJkXo1K8iQUVsgu4a9GZc_c_aKBk"/>
+    </div>
+    <p class="text-sm font-semibold text-on-surface-variant">Bergabung dengan <span class="text-primary font-bold">12rb+</span> Pelanggan<br>yang telah berkontribusi.</p>
+</div>
+</div>
+<!-- Intuitive Visual Composition -->
+<div class="relative w-full aspect-square xl:aspect-[4/3] flex items-center justify-center lg:ml-8 mt-12 lg:mt-0">
+    <!-- Center Glow Ambient -->
+    <div class="absolute inset-0 bg-primary-fixed/40 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-tertiary-fixed/30 blur-[80px] rounded-full pointer-events-none"></div>
+    
+    <!-- Central Element -->
+    <div class="relative z-10 w-72 h-72 sm:w-80 sm:h-80 bg-surface-container-lowest/70 backdrop-blur-2xl border border-white/60 p-8 rounded-[3rem] shadow-[0_30px_60px_rgba(0,113,45,0.1)] flex flex-col items-center justify-center text-center animate-float-1">
+        <div class="w-24 h-24 bg-gradient-to-br from-primary-fixed to-secondary-fixed rounded-[2rem] flex items-center justify-center mb-6 shadow-inner rotate-3">
+            <span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">compost</span>
+        </div>
+        <h3 class="font-headline font-extrabold text-3xl text-on-surface mb-2">HijauLokal</h3>
+        <p class="text-sm font-bold text-outline uppercase tracking-widest bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/30">Ekosistem Lestari</p>
+    </div>
+
+    <!-- Floating Card 1: UMKM Mitra -->
+    <div class="absolute top-8 sm:top-12 left-0 sm:-left-4 xl:-left-12 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-5 animate-float-2">
+        <div class="bg-tertiary-fixed-dim/30 p-4 rounded-2xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary text-3xl">storefront</span>
+        </div>
+        <div class="text-left pr-2">
+            <p class="text-[10px] text-tertiary font-bold uppercase tracking-widest mb-1">Pemberdayaan</p>
+            <p class="text-2xl font-black text-on-surface leading-none">1.250+</p>
+            <p class="text-xs font-semibold text-on-surface-variant mt-1">Mitra UMKM Aktif</p>
+        </div>
+    </div>
+
+    <!-- Floating Card 2: Dampak Lingkungan -->
+    <div class="absolute bottom-8 sm:bottom-12 right-0 sm:-right-4 xl:-right-8 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-5 animate-float-3">
+        <div class="bg-primary/10 p-4 rounded-2xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">forest</span>
+        </div>
+        <div class="text-left pr-2">
+            <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Dampak Positif</p>
+            <p class="text-2xl font-black text-on-surface leading-none">50 rb</p>
+            <p class="text-xs font-semibold text-on-surface-variant mt-1">Pohon Ditanam</p>
+        </div>
+    </div>
+
+    <!-- Floating Card 3: Eco point mini -->
+    <div class="absolute top-24 sm:top-32 right-8 sm:right-4 z-0 bg-surface-container-lowest/90 backdrop-blur-xl border border-white/60 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float-4">
+        <span class="material-symbols-outlined text-[#FF9100] text-3xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+        <div>
+            <p class="text-sm font-black text-on-surface leading-none">+250</p>
+            <p class="text-[10px] font-bold text-outline uppercase tracking-widest mt-1">Eco-Poin</p>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- Value Propositions (Bento Style) -->
+<section class="py-24 px-6 md:px-8 lg:px-12 xl:px-16 bg-surface-container-low border-y border-outline-variant/10">
+<div class="w-full max-w-[1600px] mx-auto">
+<div class="mb-14">
+<h2 class="font-headline text-3xl md:text-5xl text-primary font-extrabold tracking-tight">Mengapa HijauLokal?</h2>
+<p class="text-on-surface-variant text-lg lg:text-xl mt-4 max-w-2xl">Kualitas premium dengan dampak positif bagi bumi nusantara.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2">
+<div class="w-14 h-14 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-125" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-headline text-xl font-bold">Dukung UMKM</h3>
+<p class="text-on-surface-variant leading-relaxed">Pemberdayaan ekonomi lokal melalui kemitraan adil dengan pengrajin seluruh nusantara.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-primary text-on-primary p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2 shadow-lg">
+<div class="w-14 h-14 bg-on-primary-container rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-125" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-primary-container">100% Organik</h3>
+<p class="text-on-primary/80 leading-relaxed">Setiap produk dibuat dari bahan alami tanpa pestisida atau bahan kimia berbahaya.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2">
+<div class="w-14 h-14 bg-tertiary-fixed rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary scale-125" data-icon="local_shipping">local_shipping</span>
+</div>
+<h3 class="font-headline text-xl font-bold">Pengiriman Hijau</h3>
+<p class="text-on-surface-variant leading-relaxed">Kemasan bebas plastik dan logistik rendah karbon untuk menjaga kelestarian alam.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Katalog Overview -->
+<section class="py-32 px-6 md:px-8 lg:px-12 xl:px-16 w-full max-w-[1600px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl text-primary font-bold mb-4 tracking-tight">Koleksi Terpilih</h2>
+<p class="text-on-surface-variant text-lg">Sentuhan keindahan alam Indonesia untuk kenyamanan gaya hidup Anda sehari-hari.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                    Lihat Semua Katalog 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Refined Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
+<!-- Large Card -->
+<div class="sm:col-span-2 lg:col-span-2 product-card group cursor-pointer bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+<div class="aspect-video overflow-hidden bg-surface-container relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist wooden furniture set in bright room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEyHrpXajpeogmGLa5et-zMwJrOncjEBbEVndwsHEmq_4Ka-xzrGfy_v2PanqN32y7IgzTlw_1xvqtHYIQyVxBxja8pgIbDoK0Z00aRhHMcpXxpP_bjgcMU0VsdseWtWkhJ_-PI0zfTjHPNJo5ExTEPAEHklstw-pyBjcx8AwtVM_L1hzA4krDC0hV-9tnCXAUoPS7KPTXSqGrQEE36bZpLRyDtgRF-okKFv3zgWZJnjgYJToAucMRv2XQSd91ieSBnwo_9dsEBD8"/>
+<div class="absolute top-6 left-6">
+<span class="bg-primary/90 text-on-primary backdrop-blur px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Produk Baru</span>
+</div>
+<div class="cart-button absolute inset-0 bg-black/5 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold flex items-center gap-2 shadow-2xl hover:bg-on-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                Tambah ke Keranjang
+                            </button>
+</div>
+</div>
+<div class="p-8 flex justify-between items-center">
+<div>
+<h4 class="font-headline text-2xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Mebel Kayu Jati Minimalis</h4>
+<p class="text-on-surface-variant text-sm font-medium">Koleksi Ruang Tamu • Kayu Berkelanjutan</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-tighter mb-1">Harga</p>
+<p class="text-2xl font-bold text-tertiary">Rp 2.450.000</p>
+</div>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="product-card group cursor-pointer bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Handcrafted organic skin care products in glass jars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCquzZYvksR0GJMzyExgP7GImB6aC841GmgGcVy7x2dk3FL1CTDKQKKaZce3aOEuuXYB_i4DFGCOjX73wvsnSH_uUtnsnRV0YkrCnl4S-6yxqt1-Rpjo9nHVnoBzYVmrgzPrgBEjekG0DMGh2I4t3sDpM-Hss6F7WAywPlLD4KH5lZC1IQhGgxRjhyepxGWgCjHKpTQphpfOXTyPCG_JMG42J4uFSqYRgiihe3swpAE-esA9mjtOI0-3tgrEpqjaenuzqct2GnaggM"/>
+<div class="cart-button absolute inset-0 bg-black/5 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300">
+<button class="bg-primary text-on-primary p-4 rounded-full shadow-2xl hover:bg-on-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Self Care</p>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Perawatan Organik</h4>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<p class="text-lg font-bold text-tertiary">Rp 185.000</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-orange-400 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface-variant">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="product-card group cursor-pointer bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High quality batik fabric with natural indigo dye" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1quh58eTbwj-yLoU7ETmW6N19cUfD45Jxs54lB8WEnzR6OsHWmtfdyINTkjugowYhy-qvp7PpV40eNR3zgEPoq7TeSsY0Ri-k_gedCYE9j70vec3UVWo2_pI5bAuCbxusQdCyapRw1I4SfHbytxVb7LPdmmHpMTywRIMjzJucQ7k6p4bHd2erZ0JgZDja6FqzvBNxS1B_STqqCP0GoYKfse1CTecVr8HnslqQQffSjCUi7ozWy4FmqCb1GqhHTHTB8RXsKXzZE6s"/>
+<div class="cart-button absolute inset-0 bg-black/5 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300">
+<button class="bg-primary text-on-primary p-4 rounded-full shadow-2xl hover:bg-on-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Lifestyle</p>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Kain Batik Indigo</h4>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<p class="text-lg font-bold text-tertiary">Rp 420.000</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-orange-400 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface-variant">4.8</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tentang Kami Brief -->
+<section class="py-32 px-6 md:px-8 lg:px-12 xl:px-16 bg-[#f2eeda] border-y border-secondary/10 relative overflow-hidden">
+<div class="w-full max-w-[1600px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-secondary-fixed/30 rounded-full blur-3xl"></div>
+<div class="relative grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<img alt="" class="rounded-2xl w-full aspect-square object-cover shadow-lg" data-alt="Indonesian artisan weaving traditional basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOU1CWFy6Axg1uB7OQIDBZ3YXk1xOt1vbAUcis6LJ26-ZhzxrD63_knF4bJnSVWY4h1YZ3wYwNoo8c5J9SMcc1Gr70Dxi6NzACSOf-ixcT5Px4ppQDKzpuvRHGLEcqChX7W3jKaOW9bopkFbOmslsiVXILtVlA9dpl439fD7XowBvwWUMx-8Qz9758-YTAGAX67g0V0ZawjDBYLz225gbc8wdAveXQ0gxUxM5Dj88z6uCWWQyJzsFAigwNgWtrrRfi9a2pc5P1EWM"/>
+<img alt="" class="rounded-2xl w-full aspect-video object-cover shadow-lg" data-alt="Sustainable farm landscape in Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMyhOPB4NWMkBbX2SizlasMH3AJPgQBnvwl2TIFsRW_gwOf4WHkmmVOi_9hT0fTIkvdhPr_Kz59xUnEz9qRz_GfZOigRoEn64pJGPCp0chpETsisfjk8C2is3i4RLvEufhZyk55dZR_cKjvq9lSdhu_XIVaykjvXwHLca-sA4sNyMc7BjttNflE4ypATzZphqk5GsvXcP0A_lm7b4GG2Y7mgW9yFwstrxQAFrY85uubb25DBFMElY5qeEYSl2Mn3zuh1Xe3lXNJaI"/>
+</div>
+<div class="space-y-4">
+<img alt="" class="rounded-2xl w-full aspect-video object-cover shadow-lg" data-alt="Close up of organic food ingredients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaqOQHsDszl4jP3-ypmVHoZ2WwUg7i0qY-hTY3uHgvBoKJtUaQ3LiUqGqJMf9lytXfA_U9WY6boiju3bZ4wuWsWhs9BzN4S0VJKF-5zZJHdNurLKHy7PMIcMEzIneEwEkjIv_xVj0WTDNuSwVr6tfgXSrNpJUe1xr6NWRKUF2Af9P5YsBwTKSA8nm1nt_R3_zEVjsGF3Gk1lQgADKcJObaOoNkET3tzETODXuBrWYWKMt-w9cUtCa1lagxCimSU1cRcL-DFhK7ujY"/>
+<img alt="" class="rounded-2xl w-full aspect-square object-cover shadow-lg" data-alt="Modern eco-friendly packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVgwyePMlhXRscVYATSFfqBzfJC4d8y1jfWb5LT9fIxjKFzpxaJMsRK71hxJ0UBHkX3TBHkQjyTve68K0UYOrBdRj86LNCKF7XcbjGas0DmuaEc7HUC55ZKECPtp9RKbyk0Cu9EncZPpYUUtxnE6o5cp8Q7vn9T3erAiMJUD0da0XDU29P0uOgOyliU6fxcLBWNntnHka3Y5QIeeEnsWi_QRyDAvdSkpL0dmwQoVWOf6FcWRiRZMUoeVd6nfKLNegyshqtzecKSDQ"/>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<h2 class="font-headline text-4xl md:text-5xl text-primary font-extrabold mb-8 tracking-tight">Napas Baru untuk Tradisi</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        HijauLokal lahir dari keinginan untuk menghubungkan para pengrajin desa dengan pasar modern yang mendambakan keaslian. Kami percaya bahwa produk berkelanjutan tidak hanya tentang material, tapi tentang menghargai tangan yang menciptakannya.
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Setiap pembelian Anda berkontribusi pada penanaman kembali hutan lokal dan kesejahteraan ribuan keluarga UMKM di seluruh Indonesia.
+                    </p>
+<div class="flex gap-12">
+<div>
+<p class="text-3xl font-bold text-primary">500+</p>
+<p class="text-sm text-on-surface-variant font-medium">Mitra UMKM</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary">12k+</p>
+<p class="text-sm text-on-surface-variant font-medium">Produk Terjual</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary">100%</p>
+<p class="text-sm text-on-surface-variant font-medium">Lestari</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-6 text-center w-full max-w-[1600px] mx-auto">
+<div class="w-full mx-auto bg-gradient-to-br from-tertiary-container to-[#703d00] text-on-tertiary p-12 md:p-24 rounded-[3rem] shadow-2xl relative overflow-hidden group hover:shadow-[0_20px_50px_rgba(112,61,0,0.3)] transition-all duration-700">
+<div class="absolute top-0 right-0 w-96 h-96 bg-tertiary-fixed-dim/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-1000"></div>
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-8 relative z-10 tracking-tight">Siap Mendukung Perubahan?</h2>
+<p class="text-lg md:text-xl opacity-90 mb-12 max-w-3xl mx-auto relative z-10 leading-relaxed">Bergabunglah dengan ribuan pelanggan lainnya yang telah beralih ke gaya hidup yang lebih hijau, berkelanjutan, dan bermakna.</p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<a href="login.html" class="bg-secondary-fixed text-on-secondary-fixed px-12 py-5 rounded-2xl font-extrabold text-xl shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 hover:brightness-105 select-none cursor-pointer inline-block">
+                        Mulai Belanja Sekarang
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#dedac6] mt-auto md:mt-12 border-t border-secondary/10 shadow-inner pb-24 md:pb-0 relative z-40">
+<div class="w-full max-w-[1600px] mx-auto py-16 px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a href="index.html" class="text-2xl font-extrabold text-[#00712D] tracking-tight hover:scale-105 transition-transform cursor-pointer">HijauLokal</a>
+<p class="font-inter text-sm text-[#526527] max-w-sm text-center md:text-left leading-relaxed">
+                © 2024 HijauLokal. Mendukung karya anak bangsa menuju ekosistem UMKM lestari dan berkelanjutan.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 flex-1">
+<a class="font-inter text-sm font-semibold text-[#526527] hover:text-[#FF9100] transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-inter text-sm font-semibold text-[#526527] hover:text-[#FF9100] transition-colors" href="#">Kebijakan Privasi</a>
+<a class="font-inter text-sm font-semibold text-[#526527] hover:text-[#FF9100] transition-colors" href="#">Hubungi Kami</a>
+<a class="font-inter text-sm font-semibold text-[#526527] hover:text-[#FF9100] transition-colors" href="#">Pusat Bantuan</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center bg-[#00712D] text-white rounded-full hover:bg-primary shadow-lg hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-[18px]">language</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-[#00712D] text-white rounded-full hover:bg-primary shadow-lg hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-[#FFFBE6]/80 glass-nav rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)]">
+<div class="flex flex-col items-center justify-center bg-[#D5ED9F] text-[#00712D] rounded-2xl px-5 py-2 Active: scale-95 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-inter text-[10px] font-medium">Beranda</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-inter text-[10px] font-medium">Katalog</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-inter text-[10px] font-medium">Keranjang</span>
+</div>
+<a href="login.html" class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-medium">Masuk</span>
+</a>
+</nav>
+</body></html>

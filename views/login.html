@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Masuk &amp; Daftar | HijauLokal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#ffb778",
+              "secondary-fixed": "#d4ec9e",
+              "secondary-fixed-dim": "#b8cf84",
+              "secondary": "#526527",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#ffd5b4",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#00531f",
+              "on-primary": "#ffffff",
+              "tertiary": "#703d00",
+              "secondary-container": "#d4ec9e",
+              "error-container": "#ffdad6",
+              "primary-container": "#00712d",
+              "on-primary-container": "#93f29e",
+              "error": "#ba1a1a",
+              "inverse-primary": "#7ddb89",
+              "primary-fixed-dim": "#7ddb89",
+              "surface": "#fefae5",
+              "background": "#fefae5",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f5f1dc",
+              "outline": "#6f7a6d",
+              "surface-container-high": "#ece9d4",
+              "on-surface-variant": "#3f493e",
+              "surface-variant": "#e7e3cf",
+              "tertiary-container": "#925100",
+              "on-surface": "#1d1c10",
+              "surface-container": "#f2eeda",
+              "primary-fixed": "#98f8a3",
+              "on-primary-fixed": "#002108",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ffdcc1",
+              "surface-dim": "#dedac6",
+              "on-tertiary-fixed": "#2e1500",
+              "on-secondary-fixed": "#141f00",
+              "surface-tint": "#006e2b",
+              "surface-container-low": "#f8f4df",
+              "outline-variant": "#becabb",
+              "inverse-surface": "#323123",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#576b2c",
+              "primary": "#005620",
+              "surface-container-highest": "#e7e3cf",
+              "on-tertiary-fixed-variant": "#6c3a00",
+              "on-secondary-fixed-variant": "#3b4d10",
+              "surface-bright": "#fefae5",
+              "on-background": "#1d1c10"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10S24.477 5 30 5zm0 2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 30c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10S24.477 37 30 37zm0 2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z' fill='%2300712d' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen flex items-center justify-center p-4 md:p-8 bg-pattern">
+<!-- Container Utama: Split Screen Layout -->
+<main class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-2xl min-h-[700px]">
+<!-- Sisi Visual (Kiri) -->
+<section class="relative hidden md:flex flex-col justify-between p-12 bg-primary overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container opacity-10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-container opacity-20 rounded-full -ml-48 -mb-48"></div>
+<div class="relative z-10">
+<a href="index.html" class="text-3xl font-headline font-bold text-on-primary tracking-tight">HijauLokal</a>
+<div class="mt-2 w-12 h-1 bg-secondary-container rounded-full"></div>
+</div>
+<div class="relative z-10">
+<h1 class="text-4xl lg:text-5xl font-headline font-extrabold text-on-primary leading-tight">
+                    Mendukung <br/>
+<span class="text-secondary-fixed">UMKM Lokal</span> <br/>
+                    Untuk Indonesia Lestari.
+                </h1>
+<p class="mt-6 text-on-primary opacity-80 text-lg max-w-sm">
+                    Temukan kurasi produk artisanal terbaik langsung dari tangan pengrajin lokal pilihan.
+                </p>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="User avatar profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2H06z3krBnIpF_P-lIMRt7S9ejrMjSsd2JbKY2fmqMoQE5yVc3ZbbwNv-izaUf9a46NXuFmpYVJ2wcmae3-msZrbMiI-gH8T3oCu2L9tD1mIaAcvznlF8fhSL9B8H1BYbXUsHDDoPnrGIVYy1TlH_hng-TgYcOpzD-05v3DJ0ypg4DN2ruUzG58BUfteDUqIGOxBs3L2Qs6JWqRdGLQQ5pNstjMipINdA-8xTM7QWeHLeSD9Ybu_Rn4CFSW0_oODZSJE1cgYnpDQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="User avatar profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmJx_MKC4nTsZtB4t7JDwq2GJHB3_tD8OP4YHR1YjZUGNTZBHFnc7vz8ZIaoosJnBnrBsQAb7zEtxQmdgexiSpKGCGoz-AUhH-h9k6NFgXHWmso_nQn6lHssv-q0Zeq9w3kaUOBo_HHwVVsiBVbyPZLjT7HrX-xFZ1Tfuq6ofSe6aV3hQ7p2fk0ESRbhzYSsFbgvdMRtLm73QzXGfyPwY03t6BHEK_o-WW_SEIBfPd0zNRNKl23-8Jil6HFVEjuEfC7Zg3TeGVpQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="User avatar profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzISYmS4gQuwVyXgf-p82SPwe0vxjIIE1Y_IgcswMN0h9hDJZ2vQtUA60FnnQctfU-zdO_EsmJtrzbvN6IyDtE6sPdU3XmF52VGRL6qEJeYIDCQWHzEV5pB5ToCLGawOqUQm-ej_4VaE2mUecyG89rcjmkDdR4DDh8BTeqqVPwdu4A5PjLx7Xu8n9V2D7Q-QkeKkLxvv2CDo-EPmWgALyVku3Ovf990Je0I5WS6afU7bezAT2mJkXo1K8iQUVsgu4a9GZc_c_aKBk"/>
+</div>
+<span class="text-on-primary text-sm font-medium">Bergabung bersama 10rb+ tetangga Hijau.</span>
+</div>
+<!-- Foreground Image Decoration -->
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[320px] text-white" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</section>
+<!-- Sisi Form (Kanan) -->
+<section class="flex flex-col p-8 md:p-16 justify-center">
+<div class="max-w-md mx-auto w-full">
+<!-- Header Form -->
+<div class="mb-10">
+<a href="index.html" class="md:hidden inline-block mb-6 text-2xl font-headline font-bold text-primary tracking-tight">HijauLokal</a>
+<h2 id="title-text" class="text-3xl font-headline font-bold text-on-surface">Selamat Datang</h2>
+<p id="subtitle-text" class="text-on-surface-variant mt-2">Masuk ke akun Anda untuk melanjutkan belanja lestari.</p>
+</div>
+<!-- Tabs Toggle (Login/Register) -->
+<div class="flex p-1 bg-surface-container rounded-2xl mb-8">
+<button id="btn-tab-login" onclick="switchTab('login')" class="flex-1 py-3 text-sm font-semibold rounded-xl bg-surface-container-lowest text-primary shadow-sm transition-all focus:outline-none">
+                        Masuk
+                    </button>
+<button id="btn-tab-daftar" onclick="switchTab('daftar')" class="flex-1 py-3 text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors focus:outline-none">
+                        Daftar
+                    </button>
+</div>
+<!-- Main Form -->
+<!-- Main Form (Login) -->
+<form id="form-login" class="space-y-6" action="dashboard.html" method="get">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1" for="email">Email atau Username</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="email" placeholder="nama@email.com" type="email" required/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center ml-1">
+<label class="text-sm font-semibold text-on-surface" for="password">Kata Sandi</label>
+<a class="text-xs font-semibold text-primary hover:underline" href="#">Lupa Sandi?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="password" placeholder="Masukkan kata sandi" type="password" required/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 ml-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="text-sm text-on-surface-variant" for="remember">Ingat saya di perangkat ini</label>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-4 bg-tertiary-container hover:bg-tertiary text-white font-bold rounded-xl shadow-lg shadow-tertiary-container/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+                        Masuk Sekarang
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</form>
+
+<!-- Main Form (Register) -->
+<form id="form-daftar" class="space-y-6 hidden" action="dashboard.html" method="get">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1" for="reg-name">Nama Lengkap</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="reg-name" placeholder="John Doe" type="text" required/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1" for="reg-email">Alamat Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="reg-email" placeholder="nama@email.com" type="email" required/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1" for="reg-password">Buat Kata Sandi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="reg-password" placeholder="Minimal 8 karakter" type="password" minlength="8" required/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-4 bg-primary hover:bg-on-primary-fixed-variant text-white font-bold rounded-xl shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+                        Daftar Akun Baru
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant opacity-30"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span id="divider-text" class="bg-surface-container-lowest px-4 text-outline font-medium tracking-widest">Atau masuk dengan</span>
+</div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-1 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors w-full">
+<svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+<span id="social-text" class="text-sm font-semibold text-on-surface">Masuk dengan Google</span>
+</button>
+</div>
+<!-- Footer Text -->
+<p class="mt-10 text-center text-sm text-on-surface-variant">
+                    <span id="footer-text">Belum punya akun?</span> 
+                    <a id="footer-link" class="text-primary font-bold hover:underline cursor-pointer" onclick="switchTab('daftar')">Daftar Sekarang</a>
+</p>
+</div>
+</section>
+</main>
+<!-- Eco Badge floating element -->
+<div class="fixed bottom-8 right-8 hidden lg:flex items-center gap-3 bg-secondary-container/90 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-sm font-semibold text-on-secondary-container">100% UMKM Terverifikasi</span>
+</div>
+
+<!-- Scripts -->
+<script>
+    function switchTab(tab) {
+        const btnLogin = document.getElementById('btn-tab-login');
+        const btnDaftar = document.getElementById('btn-tab-daftar');
+        const formLogin = document.getElementById('form-login');
+        const formDaftar = document.getElementById('form-daftar');
+        
+        const titleText = document.getElementById('title-text');
+        const subtitleText = document.getElementById('subtitle-text');
+        const dividerText = document.getElementById('divider-text');
+        const socialText = document.getElementById('social-text');
+        const footerText = document.getElementById('footer-text');
+        const footerLink = document.getElementById('footer-link');
+        
+        const activeClasses = ['bg-surface-container-lowest', 'text-primary', 'shadow-sm'];
+        const inactiveClasses = ['text-on-surface-variant', 'hover:text-on-surface'];
+
+        if (tab === 'login') {
+            formLogin.classList.remove('hidden');
+            formDaftar.classList.add('hidden');
+            
+            btnLogin.classList.add(...activeClasses);
+            btnLogin.classList.remove(...inactiveClasses);
+            
+            btnDaftar.classList.add(...inactiveClasses);
+            btnDaftar.classList.remove(...activeClasses);
+            
+            titleText.textContent = 'Selamat Datang';
+            subtitleText.textContent = 'Masuk ke akun Anda untuk melanjutkan belanja lestari.';
+            dividerText.textContent = 'Atau masuk dengan';
+            socialText.textContent = 'Masuk dengan Google';
+            footerText.textContent = 'Belum punya akun?';
+            footerLink.textContent = 'Daftar Sekarang';
+            footerLink.setAttribute('onclick', "switchTab('daftar')");
+        } else {
+            formLogin.classList.add('hidden');
+            formDaftar.classList.remove('hidden');
+            
+            btnDaftar.classList.add(...activeClasses);
+            btnDaftar.classList.remove(...inactiveClasses);
+            
+            btnLogin.classList.add(...inactiveClasses);
+            btnLogin.classList.remove(...activeClasses);
+            
+            titleText.textContent = 'Daftar Akun';
+            subtitleText.textContent = 'Bergabunglah untuk mulai mendukung UMKM lokal hari ini.';
+            dividerText.textContent = 'Atau daftar dengan';
+            socialText.textContent = 'Daftar dengan Google';
+            footerText.textContent = 'Sudah punya akun?';
+            footerLink.textContent = 'Masuk Sekarang';
+            footerLink.setAttribute('onclick', "switchTab('login')");
+        }
+    }
+</script>
+
+</body></html>
