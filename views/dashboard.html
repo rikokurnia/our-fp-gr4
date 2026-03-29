@@ -103,7 +103,7 @@
 <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 <span id="cart-badge" class="absolute -top-1.5 -right-2 bg-error text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
 </button>
-<a href="login.html" class="text-[#00712D] dark:text-[#D5ED9F] hover:scale-95 transition-transform flex items-center justify-center">
+<a id="account-link" href="login.html" class="text-[#00712D] dark:text-[#D5ED9F] hover:scale-95 transition-transform flex items-center justify-center" title="Keluar">
 <span class="material-symbols-outlined" data-icon="person">person</span>
 </a>
 </div>
@@ -113,7 +113,7 @@
 <!-- User Greeting Section -->
 <section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div>
-<h1 class="text-3xl md:text-5xl font-extrabold text-primary mb-3">Halo, Budi Perkasa!</h1>
+<h1 id="user-greeting" class="text-3xl md:text-5xl font-extrabold text-primary mb-3">Halo, Budi Perkasa!</h1>
 <p class="text-secondary font-medium text-lg">Mulai jelajahi dan dukung karya pengrajin terbaik bumi nusantara hari ini.</p>
 </div>
 <div class="flex items-center gap-4 bg-surface-container-low border border-outline-variant/20 px-6 py-4 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
@@ -247,7 +247,7 @@
 <div class="w-full max-w-[1600px] mx-auto py-12 px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="flex flex-col items-center md:items-start gap-3">
 <a href="index.html" class="text-2xl font-extrabold text-[#00712D] tracking-tight">HijauLokal</a>
-<p class="font-inter text-sm text-[#526527] dark:text-[#dedac6] max-w-sm text-center md:text-left leading-relaxed">© 2024 HijauLokal. Mendukung karya anak bangsa menuju ekosistem UMKM lestari dan berkelanjutan.</p>
+<p class="font-inter text-sm text-[#526527] dark:text-[#dedac6] max-w-sm text-center md:text-left leading-relaxed">© 2026 HijauLokal. Mendukung karya anak bangsa menuju ekosistem UMKM lestari dan berkelanjutan.</p>
 </div>
 <div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 flex-1">
 <a class="font-inter text-sm font-semibold text-[#526527] dark:text-[#dedac6] hover:text-[#FF9100] transition-colors" href="#">Syarat &amp; Ketentuan</a>
@@ -323,4 +323,39 @@
 </div>
 
 <script src="/js/app.js"></script>
+<script type="module">
+    import { initFirebaseAuth, logoutCurrentUser, subscribeToAuthState } from '/js/firebase-auth.js';
+
+    const greetingEl = document.getElementById('user-greeting');
+    const accountLink = document.getElementById('account-link');
+
+    function toDisplayName(user) {
+        return user?.displayName || user?.email || 'Pengguna';
+    }
+
+    initFirebaseAuth()
+        .then(() => subscribeToAuthState((user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            if (greetingEl) {
+                greetingEl.textContent = `Halo, ${toDisplayName(user)}!`;
+            }
+        }))
+        .catch(() => {
+            window.location.href = 'login.html';
+        });
+
+    accountLink?.addEventListener('click', async (event) => {
+        event.preventDefault();
+
+        try {
+            await logoutCurrentUser();
+        } finally {
+            window.location.href = 'login.html';
+        }
+    });
+</script>
 </body></html>

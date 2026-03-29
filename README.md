@@ -17,12 +17,41 @@ Bagian **Frontend** telah diimplementasikan 100% dan siap dinilai berdasarkan ru
 ## 💻 Cara Akses & Menjalankan Project (Local Development)
 1. Lakukan *Clone* repositori ini dari GitHub.
 2. Buka Terminal di folder project ini (folder `hijaulokal`).
-3. Anda bisa menggunakan *Live Server* di VSCode atau mengeksekusi perintah berikut untuk menjalankan server lokal:
-   ```bash
-   # Jalankan Web Server tepat di dalam folder `views` agar routing berfungsi normal
-   npx serve views/
-   ```
-4. Buka Browser pada link yang diberikan (misalnya `http://localhost:3000`) dan nikmati penelusurannya!
+3. Install dependency:
+  ```bash
+  npm install
+  ```
+4. Jalankan webserver Express:
+  ```bash
+  npm run dev
+  ```
+5. Buka Browser pada alamat `http://localhost:3000`.
+
+## 🔐 Setup Firebase Authentication
+1. Buat project di Firebase Console.
+2. Aktifkan metode login `Email/Password` dan `Google` di menu Authentication.
+3. Tambahkan domain lokal (`localhost`) pada Authorized domains.
+4. Salin file env:
+  ```bash
+  cp .env.example .env
+  ```
+5. Isi nilai Firebase pada `.env`:
+  - `FIREBASE_API_KEY`
+  - `FIREBASE_AUTH_DOMAIN`
+  - `FIREBASE_PROJECT_ID`
+  - `FIREBASE_APP_ID`
+
+Server akan mengekspose konfigurasi public Firebase melalui endpoint `/api/public-config`.
+
+## 🚀 Production Checklist
+1. Set `NODE_ENV=production`.
+2. Set `ALLOWED_ORIGIN` ke domain frontend yang valid.
+3. Pastikan `.env` tidak pernah di-commit (sudah di-ignore lewat `.gitignore`).
+4. Jalankan aplikasi dengan process manager (PM2/systemd/container).
+5. Gunakan reverse proxy (Nginx/Caddy) + HTTPS.
+6. Verifikasi endpoint health check: `/api/health`.
+
+Catatan penting: konfigurasi Firebase Web (`apiKey`, `authDomain`, `projectId`, `appId`) bukan secret backend, namun tetap dipindahkan ke env agar tidak hardcoded di source repository dan lebih mudah dikelola per environment.
 
 ---
 

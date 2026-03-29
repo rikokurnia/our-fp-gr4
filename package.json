@@ -1,0 +1,24 @@
+{
+  "name": "hijaulokal",
+  "version": "1.0.0",
+  "description": "Web server Express untuk HijauLokal",
+  "main": "server.js",
+  "scripts": {
+    "dev:clean": "fuser -k 3000/tcp 2>/dev/null || true",
+    "start": "node server.js",
+    "dev": "npm run dev:clean && node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "firebase": "^12.11.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
+  }
+}
