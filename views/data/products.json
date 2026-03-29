@@ -5,7 +5,7 @@
       "name": "Tote Bag Eceng Gondok",
       "price": 45000,
       "description": "Tote bag ramah lingkungan dari serat eceng gondok alami.",
-      "image": "https://images.unsplash.com/photo-1597484661643-2f5fef640df1?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80",
       "category": "fashion",
       "eco": true,
       "weight": 0.3
@@ -25,7 +25,7 @@
       "name": "Sabun Mandi Organik",
       "price": 35000,
       "description": "Sabun mandi batangan dari bahan organik tanpa bahan kimia berbahaya.",
-      "image": "https://images.unsplash.com/photo-1600857062241-9a9972b22ec3?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
       "category": "beauty",
       "eco": true,
       "weight": 0.2
@@ -35,7 +35,7 @@
       "name": "Piring Kayu Jati",
       "price": 85000,
       "description": "Piring makan elegan dari kayu jati bersertifikat FSC yang tahan lama.",
-      "image": "https://images.unsplash.com/photo-1610708687365-c23562a98f82?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80",
       "category": "home",
       "eco": true,
       "weight": 0.5
@@ -45,7 +45,7 @@
       "name": "Tas Belanja Jaring Kain",
       "price": 25000,
       "description": "Tas jaring serbaguna pengganti kantong plastik sekali pakai.",
-      "image": "https://images.unsplash.com/photo-1585250044569-8094daeee11c?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
       "category": "fashion",
       "eco": true,
       "weight": 0.2
@@ -85,7 +85,7 @@
       "name": "Sikat Gigi Bambu",
       "price": 12000,
       "description": "Sikat gigi ramah lingkungan yang dapat dikomposkan setelah dipakai.",
-      "image": "https://images.unsplash.com/photo-1510620353114-1e0dc42ae583?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
       "category": "beauty",
       "eco": true,
       "weight": 0.05
@@ -95,7 +95,7 @@
       "name": "Mangkok Kelapa",
       "price": 45000,
       "description": "Mangkok cantik dari tempurung kelapa asli untuk smoothie bowl.",
-      "image": "https://images.unsplash.com/photo-1596541671569-ae9709ea52f6?w=400&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=800&q=80",
       "category": "home",
       "eco": true,
       "weight": 0.25

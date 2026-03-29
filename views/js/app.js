@@ -79,7 +79,7 @@ function renderProducts(items) {
         
         card.innerHTML = `
             <div class="relative aspect-square overflow-hidden bg-surface-container">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm border border-secondary/10">
                         <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">eco</span> ${product.eco ? 'Ramah Lingkungan' : 'Reguler'}
@@ -183,7 +183,7 @@ function updateCartUI() {
             el.className = "flex gap-4 p-3 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl shadow-sm hover:shadow-md transition-shadow";
             el.innerHTML = `
                 <div class="w-20 h-20 rounded-xl overflow-hidden bg-surface flex-shrink-0 border border-outline-variant/10">
-                    <img src="${item.image}" class="w-full h-full object-cover">
+                    <img src="${item.image}" loading="lazy" decoding="async" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 flex flex-col justify-between overflow-hidden">
                     <div class="pr-6 relative">

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HijauLokal | Promo Hemat</title>
+  <meta name="description" content="Nikmati promo mingguan produk UMKM hijau di HijauLokal dengan diskon hingga 30%." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hijaulokal.id/promo.html" />
+  <meta property="og:title" content="HijauLokal | Promo Hemat" />
+  <meta property="og:description" content="Temukan diskon spesial produk ramah lingkungan dan belanja lebih hemat di HijauLokal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hijaulokal.id/promo.html" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#005620',
+            secondary: '#526527',
+            surface: '#fefae5',
+            card: '#ffffff',
+            accent: '#ff9100',
+            'outline-variant': '#becabb',
+            'surface-container': '#f2eeda',
+            'surface-container-low': '#f8f4df',
+            'secondary-container': '#d4ec9e',
+            'on-secondary-container': '#576b2c',
+            error: '#ba1a1a'
+          },
+          fontFamily: {
+            headline: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-[#1d1c10] font-body min-h-screen pb-24 md:pb-0">
+  <header class="sticky top-0 z-40 bg-[#FFFBE6]/90 backdrop-blur border-b border-[#00712D]/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-extrabold text-[#00712D] font-headline">HijauLokal</a>
+      <nav class="hidden md:flex gap-8 text-sm font-semibold">
+        <a href="index.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Beranda</a>
+        <a href="dashboard.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Katalog</a>
+        <a href="category.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Kategori</a>
+        <a href="promo.html" class="text-[#00712D] border-b-2 border-[#00712D] pb-1">Promo</a>
+        <a href="about.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Tentang Kami</a>
+      </nav>
+      <a href="login.html" class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">Masuk</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+    <section class="rounded-3xl bg-gradient-to-r from-[#703d00] via-[#a95b00] to-[#ff9100] text-white p-8 md:p-10 shadow-lg">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase opacity-90">Promo Mingguan</p>
+          <h1 class="font-headline text-3xl md:text-5xl font-extrabold mt-3">Diskon Produk UMKM Hingga 30%</h1>
+          <p class="mt-4 text-white/90 max-w-2xl">Belanja produk ramah lingkungan dengan harga lebih hemat. Promo diperbarui otomatis setiap minggu.</p>
+        </div>
+        <div class="bg-white/20 backdrop-blur rounded-2xl px-5 py-4 min-w-[220px]">
+          <p class="text-[11px] uppercase tracking-widest font-bold">Promo Berakhir Dalam</p>
+          <p id="countdown" class="font-headline text-2xl font-extrabold mt-1">--:--:--</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="promo-stats"></section>
+
+    <section class="bg-card rounded-3xl border border-[#dfe7d4] p-5 md:p-6 shadow-sm space-y-5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <h2 class="font-headline text-2xl font-bold text-primary">Daftar Produk Promo</h2>
+        <a href="dashboard.html" class="text-sm font-bold text-white bg-[#925100] hover:bg-[#703d00] px-4 py-2 rounded-xl w-fit">Lihat Semua di Katalog</a>
+      </div>
+      <div id="promo-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-[#d9e2cc] py-8 px-6 text-center text-sm text-secondary">
+    <p>© 2026 HijauLokal. Promo spesial untuk dukung UMKM lokal.</p>
+  </footer>
+
+  <nav data-mobile-nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#FFFBE6]/90 backdrop-blur rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)] px-2 pb-5 pt-2">
+    <div class="relative flex items-center justify-between max-w-md mx-auto">
+      <div data-nav-indicator class="absolute left-0 top-0 h-full rounded-2xl bg-[#D5ED9F] transition-all duration-300 ease-out"></div>
+      <a href="index.html" data-nav-item="index.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Beranda</span>
+      </a>
+      <a href="dashboard.html" data-nav-item="dashboard.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">storefront</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Katalog</span>
+      </a>
+      <a href="category.html" data-nav-item="category.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Kategori</span>
+      </a>
+      <a href="promo.html" data-nav-item="promo.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">local_offer</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Promo</span>
+      </a>
+      <a href="about.html" data-nav-item="about.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">info</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Tentang</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="/js/mobile-nav.js"></script>
+  <script>
+    const promoGrid = document.getElementById('promo-grid');
+    const promoStats = document.getElementById('promo-stats');
+    const countdownEl = document.getElementById('countdown');
+
+    const categoryLabelMap = {
+      fashion: 'Fashion',
+      home: 'Kebutuhan Rumah',
+      beauty: 'Perawatan Diri'
+    };
+
+    const discountByCategory = {
+      fashion: 20,
+      home: 15,
+      beauty: 30
+    };
+
+    function rupiah(value) {
+      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
+    }
+
+    function promoDeadline() {
+      const now = new Date();
+      const end = new Date(now);
+      end.setHours(23, 59, 59, 999);
+      end.setDate(now.getDate() + ((7 - now.getDay()) % 7 || 7));
+      return end;
+    }
+
+    function startCountdown() {
+      const endTime = promoDeadline().getTime();
+
+      function tick() {
+        const remaining = Math.max(0, endTime - Date.now());
+        const hours = String(Math.floor(remaining / (1000 * 60 * 60))).padStart(2, '0');
+        const minutes = String(Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const seconds = String(Math.floor((remaining % (1000 * 60)) / 1000)).padStart(2, '0');
+        countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    function renderStats(promos) {
+      const maxDiscount = promos.reduce((max, item) => Math.max(max, item.discount), 0);
+      const totalSave = promos.reduce((sum, item) => sum + item.saveAmount, 0);
+
+      const stats = [
+        { label: 'Produk Promo', value: promos.length, suffix: 'item' },
+        { label: 'Diskon Tertinggi', value: maxDiscount, suffix: '%' },
+        { label: 'Total Hemat', value: rupiah(totalSave), suffix: '' },
+        { label: 'Kategori Aktif', value: new Set(promos.map((item) => item.category)).size, suffix: 'kategori' }
+      ];
+
+      promoStats.innerHTML = stats.map((item) => `
+        <article class="rounded-2xl bg-card border border-[#dfe7d4] p-4 shadow-sm">
+          <p class="text-xs uppercase tracking-widest text-secondary font-bold">${item.label}</p>
+          <p class="mt-2 text-3xl font-extrabold text-primary font-headline">${item.value}</p>
+          <p class="text-sm text-secondary">${item.suffix}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderPromoProducts(promos) {
+      promoGrid.innerHTML = promos.map((item) => `
+        <article class="bg-surface-container-low rounded-2xl overflow-hidden group hover:shadow-xl transition-shadow duration-300 flex flex-col border border-outline-variant/30">
+          <div class="relative aspect-square overflow-hidden bg-surface-container">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span class="bg-[#b71c1c] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Diskon ${item.discount}%</span>
+            </div>
+            <div class="absolute top-3 right-3 w-8 h-8 bg-white/85 backdrop-blur rounded-full flex items-center justify-center text-error">
+              <span class="material-symbols-outlined text-sm">local_offer</span>
+            </div>
+          </div>
+          <div class="p-4 space-y-2 flex flex-col flex-1">
+            <p class="text-[10px] font-bold text-secondary uppercase tracking-tighter">${categoryLabelMap[item.category] || item.category}</p>
+            <h3 class="text-[#1d1c10] font-bold text-sm line-clamp-2 leading-snug flex-1">${item.name}</h3>
+            <div class="flex items-center gap-2 mt-auto">
+              <span class="text-lg font-extrabold text-primary">${rupiah(item.promoPrice)}</span>
+              <span class="text-xs text-gray-500 line-through">${rupiah(item.price)}</span>
+            </div>
+            <p class="text-xs text-[#7f3f00] font-semibold">Hemat ${rupiah(item.saveAmount)}</p>
+            <a href="dashboard.html" class="w-full bg-[#925100] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 hover:bg-[#703d00] transition-colors active:scale-95 shadow-sm">
+              <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              Ambil Promo
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function initPromoPage() {
+      startCountdown();
+
+      try {
+        const response = await fetch('/data/products.json');
+        if (!response.ok) throw new Error('Gagal memuat data produk.');
+
+        const payload = await response.json();
+        const products = payload.products || [];
+
+        const promos = products.slice(0, 9).map((item) => {
+          const discount = discountByCategory[item.category] || 10;
+          const promoPrice = Math.round(item.price * (1 - discount / 100));
+
+          return {
+            ...item,
+            discount,
+            promoPrice,
+            saveAmount: item.price - promoPrice
+          };
+        });
+
+        renderStats(promos);
+        renderPromoProducts(promos);
+      } catch (_error) {
+        promoGrid.innerHTML = '<div class="col-span-full rounded-2xl bg-[#fff5f2] border border-[#ffd8c9] p-6 text-[#8b3e1b] font-semibold">Data promo gagal dimuat. Coba reload halaman.</div>';
+      }
+    }
+
+    initPromoPage();
+  </script>
+</body>
+</html>

@@ -4,9 +4,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>HijauLokal - Katalog UMKM Lestari</title>
+<meta name="description" content="Jelajahi katalog produk UMKM hijau di HijauLokal, tambahkan ke keranjang, dan hitung ongkir dengan cepat."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://hijaulokal.id/dashboard.html"/>
+<meta property="og:title" content="HijauLokal | Katalog Produk"/>
+<meta property="og:description" content="Temukan produk ramah lingkungan terbaik dari UMKM lokal di halaman katalog HijauLokal."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://hijaulokal.id/dashboard.html"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -88,10 +94,10 @@
 <div class="flex items-center gap-10">
 <a href="index.html" class="text-2xl font-bold text-[#00712D] dark:text-[#D5ED9F] tracking-tight">HijauLokal</a>
 <nav class="hidden md:flex gap-6">
-<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Katalog</a>
-<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Kategori</a>
-<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Promo</a>
-<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Tentang Kami</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="dashboard.html">Katalog</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="category.html">Kategori</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="promo.html">Promo</a>
+<a class="text-[#1d1c10] dark:text-[#fefae5] opacity-70 hover:opacity-100 transition-opacity duration-300" href="about.html">Tentang Kami</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
@@ -223,24 +229,30 @@
 </div>
 </main>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-[#FFFBE6]/80 dark:bg-[#1d1c10]/80 backdrop-blur-md rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)]">
-<button class="flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
-<span class="material-symbols-outlined" data-icon="home">home</span>
-<span class="font-inter text-[10px] font-medium mt-1">Beranda</span>
-</button>
-<button class="flex flex-col items-center justify-center bg-[#D5ED9F] dark:bg-[#00712D] text-[#00712D] dark:text-[#fefae5] rounded-2xl px-5 py-2 scale-95 transition-all">
-<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
-<span class="font-inter text-[10px] font-medium mt-1">Katalog</span>
-</button>
-<button id="mobile-cart-btn" class="relative flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
-<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
-<span class="font-inter text-[10px] font-medium mt-1">Keranjang</span>
-<span id="mobile-cart-badge" class="absolute top-1 right-3 bg-error text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
-</button>
-<button class="flex flex-col items-center justify-center text-[#1d1c10] dark:text-[#fefae5] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 transition-all">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-inter text-[10px] font-medium mt-1">Akun</span>
-</button>
+<nav data-mobile-nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#FFFBE6]/85 backdrop-blur-md rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)] px-2 pb-5 pt-2">
+<div class="relative flex items-center justify-between max-w-md mx-auto">
+<div data-nav-indicator class="absolute left-0 top-0 h-full rounded-2xl bg-[#D5ED9F] transition-all duration-300 ease-out"></div>
+<a href="index.html" data-nav-item="index.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Beranda</span>
+</a>
+<a href="dashboard.html" data-nav-item="dashboard.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Katalog</span>
+</a>
+<a href="category.html" data-nav-item="category.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Kategori</span>
+</a>
+<a href="promo.html" data-nav-item="promo.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">local_offer</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Promo</span>
+</a>
+<a href="about.html" data-nav-item="about.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Tentang</span>
+</a>
+</div>
 </nav>
 <!-- Footer -->
 <footer class="w-full bg-[#dedac6] dark:bg-[#1d1c10] mt-auto md:mt-24 border-t border-secondary/10 shadow-inner pb-24 md:pb-0 relative z-40">
@@ -323,6 +335,7 @@
 </div>
 
 <script src="/js/app.js"></script>
+<script src="/js/mobile-nav.js"></script>
 <script type="module">
     import { initFirebaseAuth, logoutCurrentUser, subscribeToAuthState } from '/js/firebase-auth.js';
 

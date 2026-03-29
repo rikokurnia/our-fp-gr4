@@ -4,6 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>HijauLokal | Kurasi UMKM Lestari</title>
+<meta name="description" content="HijauLokal adalah platform e-katalog UMKM hijau Indonesia untuk belanja produk ramah lingkungan, dukung ekonomi lokal, dan hidup berkelanjutan."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://hijaulokal.id/"/>
+<meta property="og:title" content="HijauLokal | Kurasi UMKM Lestari"/>
+<meta property="og:description" content="Temukan produk UMKM ramah lingkungan dan dukung pelaku usaha lokal Indonesia bersama HijauLokal."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://hijaulokal.id/"/>
+<meta property="og:site_name" content="HijauLokal"/>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -96,6 +104,44 @@
       .animate-float-2 { animation: float 5s ease-in-out infinite 1s; }
       .animate-float-3 { animation: float 7s ease-in-out infinite 2s; }
       .animate-float-4 { animation: float 4s ease-in-out infinite 0.5s; }
+
+            .fade-up {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 700ms ease, transform 700ms ease;
+            }
+
+            .fade-up.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @media (max-width: 640px) {
+                .hero-visual {
+                    aspect-ratio: 1 / 1;
+                    margin-top: 1.5rem;
+                }
+
+                .hero-center-card {
+                    width: 15rem;
+                    height: 15rem;
+                    padding: 1.25rem;
+                }
+
+                .hero-float-card {
+                    padding: 0.75rem;
+                    border-radius: 1rem;
+                    gap: 0.75rem;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .fade-up {
+                    opacity: 1;
+                    transform: none;
+                    transition: none;
+                }
+            }
     </style>
 </head>
 <body class="bg-background text-on-background font-body antialiased pb-16 md:pb-0">
@@ -104,10 +150,10 @@
 <div class="flex justify-between items-center px-6 md:px-8 lg:px-12 xl:px-16 py-4 w-full max-w-[1600px] mx-auto">
 <a href="index.html" class="text-2xl font-extrabold text-[#00712D] tracking-tight font-headline hover:scale-105 transition-transform cursor-pointer inline-block">HijauLokal</a>
 <nav class="hidden md:flex items-center gap-10">
-<a class="text-[#00712D] font-bold border-b-2 border-[#00712D] transition-opacity duration-300 cursor-pointer" href="#">Katalog</a>
-<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Kategori</a>
-<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Promo</a>
-<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Tentang Kami</a>
+<a class="text-[#00712D] font-bold border-b-2 border-[#00712D] transition-opacity duration-300 cursor-pointer" href="dashboard.html">Katalog</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="category.html">Kategori</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="promo.html">Promo</a>
+<a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="about.html">Tentang Kami</a>
 </nav>
 <div class="flex items-center">
 <a href="login.html" class="bg-[#FF9100] text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 hover:brightness-105 shadow-md">
@@ -145,58 +191,84 @@
 </div>
 <div class="mt-12 flex items-center gap-6">
     <div class="flex -space-x-3">
-        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2H06z3krBnIpF_P-lIMRt7S9ejrMjSsd2JbKY2fmqMoQE5yVc3ZbbwNv-izaUf9a46NXuFmpYVJ2wcmae3-msZrbMiI-gH8T3oCu2L9tD1mIaAcvznlF8fhSL9B8H1BYbXUsHDDoPnrGIVYy1TlH_hng-TgYcOpzD-05v3DJ0ypg4DN2ruUzG58BUfteDUqIGOxBs3L2Qs6JWqRdGLQQ5pNstjMipINdA-8xTM7QWeHLeSD9Ybu_Rn4CFSW0_oODZSJE1cgYnpDQ"/>
-        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmJx_MKC4nTsZtB4t7JDwq2GJHB3_tD8OP4YHR1YjZUGNTZBHFnc7vz8ZIaoosJnBnrBsQAb7zEtxQmdgexiSpKGCGoz-AUhH-h9k6NFgXHWmso_nQn6lHssv-q0Zeq9w3kaUOBo_HHwVVsiBVbyPZLjT7HrX-xFZ1Tfuq6ofSe6aV3hQ7p2fk0ESRbhzYSsFbgvdMRtLm73QzXGfyPwY03t6BHEK_o-WW_SEIBfPd0zNRNKl23-8Jil6HFVEjuEfC7Zg3TeGVpQ"/>
-        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzISYmS4gQuwVyXgf-p82SPwe0vxjIIE1Y_IgcswMN0h9hDJZ2vQtUA60FnnQctfU-zdO_EsmJtrzbvN6IyDtE6sPdU3XmF52VGRL6qEJeYIDCQWHzEV5pB5ToCLGawOqUQm-ej_4VaE2mUecyG89rcjmkDdR4DDh8BTeqqVPwdu4A5PjLx7Xu8n9V2D7Q-QkeKkLxvv2CDo-EPmWgALyVku3Ovf990Je0I5WS6afU7bezAT2mJkXo1K8iQUVsgu4a9GZc_c_aKBk"/>
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" loading="lazy" decoding="async" alt="Pelanggan HijauLokal 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2H06z3krBnIpF_P-lIMRt7S9ejrMjSsd2JbKY2fmqMoQE5yVc3ZbbwNv-izaUf9a46NXuFmpYVJ2wcmae3-msZrbMiI-gH8T3oCu2L9tD1mIaAcvznlF8fhSL9B8H1BYbXUsHDDoPnrGIVYy1TlH_hng-TgYcOpzD-05v3DJ0ypg4DN2ruUzG58BUfteDUqIGOxBs3L2Qs6JWqRdGLQQ5pNstjMipINdA-8xTM7QWeHLeSD9Ybu_Rn4CFSW0_oODZSJE1cgYnpDQ"/>
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" loading="lazy" decoding="async" alt="Pelanggan HijauLokal 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmJx_MKC4nTsZtB4t7JDwq2GJHB3_tD8OP4YHR1YjZUGNTZBHFnc7vz8ZIaoosJnBnrBsQAb7zEtxQmdgexiSpKGCGoz-AUhH-h9k6NFgXHWmso_nQn6lHssv-q0Zeq9w3kaUOBo_HHwVVsiBVbyPZLjT7HrX-xFZ1Tfuq6ofSe6aV3hQ7p2fk0ESRbhzYSsFbgvdMRtLm73QzXGfyPwY03t6BHEK_o-WW_SEIBfPd0zNRNKl23-8Jil6HFVEjuEfC7Zg3TeGVpQ"/>
+        <img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover shadow-sm" loading="lazy" decoding="async" alt="Pelanggan HijauLokal 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzISYmS4gQuwVyXgf-p82SPwe0vxjIIE1Y_IgcswMN0h9hDJZ2vQtUA60FnnQctfU-zdO_EsmJtrzbvN6IyDtE6sPdU3XmF52VGRL6qEJeYIDCQWHzEV5pB5ToCLGawOqUQm-ej_4VaE2mUecyG89rcjmkDdR4DDh8BTeqqVPwdu4A5PjLx7Xu8n9V2D7Q-QkeKkLxvv2CDo-EPmWgALyVku3Ovf990Je0I5WS6afU7bezAT2mJkXo1K8iQUVsgu4a9GZc_c_aKBk"/>
     </div>
     <p class="text-sm font-semibold text-on-surface-variant">Bergabung dengan <span class="text-primary font-bold">12rb+</span> Pelanggan<br>yang telah berkontribusi.</p>
 </div>
 </div>
 <!-- Intuitive Visual Composition -->
-<div class="relative w-full aspect-square xl:aspect-[4/3] flex items-center justify-center lg:ml-8 mt-12 lg:mt-0">
+<div class="hero-visual relative w-full aspect-square xl:aspect-[4/3] flex items-center justify-center lg:ml-8 mt-12 lg:mt-0 fade-up">
     <!-- Center Glow Ambient -->
     <div class="absolute inset-0 bg-primary-fixed/40 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-tertiary-fixed/30 blur-[80px] rounded-full pointer-events-none"></div>
     
     <!-- Central Element -->
-    <div class="relative z-10 w-72 h-72 sm:w-80 sm:h-80 bg-surface-container-lowest/70 backdrop-blur-2xl border border-white/60 p-8 rounded-[3rem] shadow-[0_30px_60px_rgba(0,113,45,0.1)] flex flex-col items-center justify-center text-center animate-float-1">
-        <div class="w-24 h-24 bg-gradient-to-br from-primary-fixed to-secondary-fixed rounded-[2rem] flex items-center justify-center mb-6 shadow-inner rotate-3">
-            <span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">compost</span>
+    <div class="hero-center-card relative z-10 w-72 h-72 sm:w-80 sm:h-80 bg-surface-container-lowest/70 backdrop-blur-2xl border border-white/60 p-8 rounded-[3rem] shadow-[0_30px_60px_rgba(0,113,45,0.1)] flex flex-col items-center justify-center text-center animate-float-1">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-fixed to-secondary-fixed rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center mb-4 sm:mb-6 shadow-inner rotate-3">
+            <span class="material-symbols-outlined text-primary text-5xl sm:text-6xl" style="font-variation-settings: 'FILL' 1;">compost</span>
         </div>
-        <h3 class="font-headline font-extrabold text-3xl text-on-surface mb-2">HijauLokal</h3>
-        <p class="text-sm font-bold text-outline uppercase tracking-widest bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/30">Ekosistem Lestari</p>
+        <h3 class="font-headline font-extrabold text-2xl sm:text-3xl text-on-surface mb-2">HijauLokal</h3>
+        <p class="text-xs sm:text-sm font-bold text-outline uppercase tracking-widest bg-surface-container-low px-3 sm:px-4 py-1.5 rounded-full border border-outline-variant/30">Ekosistem Lestari</p>
     </div>
 
-    <!-- Floating Card 1: UMKM Mitra -->
-    <div class="absolute top-8 sm:top-12 left-0 sm:-left-4 xl:-left-12 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-5 animate-float-2">
-        <div class="bg-tertiary-fixed-dim/30 p-4 rounded-2xl flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary text-3xl">storefront</span>
+    <!-- Floating Card 1: UMKM Mitra (Desktop) -->
+    <div class="hidden sm:flex hero-float-card hero-float-umkm absolute top-8 sm:top-12 left-0 sm:-left-4 xl:-left-12 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] items-center gap-5 animate-float-2">
+        <div class="bg-tertiary-fixed-dim/30 p-3 sm:p-4 rounded-2xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary text-2xl sm:text-3xl">storefront</span>
         </div>
         <div class="text-left pr-2">
             <p class="text-[10px] text-tertiary font-bold uppercase tracking-widest mb-1">Pemberdayaan</p>
-            <p class="text-2xl font-black text-on-surface leading-none">1.250+</p>
+            <p class="text-xl sm:text-2xl font-black text-on-surface leading-none">1.250+</p>
             <p class="text-xs font-semibold text-on-surface-variant mt-1">Mitra UMKM Aktif</p>
         </div>
     </div>
 
-    <!-- Floating Card 2: Dampak Lingkungan -->
-    <div class="absolute bottom-8 sm:bottom-12 right-0 sm:-right-4 xl:-right-8 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-5 animate-float-3">
-        <div class="bg-primary/10 p-4 rounded-2xl flex items-center justify-center">
-            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">forest</span>
+    <!-- Floating Card 2: Dampak Lingkungan (Desktop) -->
+    <div class="hidden sm:flex hero-float-card hero-float-impact absolute bottom-8 sm:bottom-12 right-0 sm:-right-4 xl:-right-8 z-20 bg-surface-container-lowest/80 backdrop-blur-xl border border-white/60 p-5 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] items-center gap-5 animate-float-3">
+        <div class="bg-primary/10 p-3 sm:p-4 rounded-2xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl" style="font-variation-settings: 'FILL' 1;">forest</span>
         </div>
         <div class="text-left pr-2">
             <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Dampak Positif</p>
-            <p class="text-2xl font-black text-on-surface leading-none">50 rb</p>
+            <p class="text-xl sm:text-2xl font-black text-on-surface leading-none">50 rb</p>
             <p class="text-xs font-semibold text-on-surface-variant mt-1">Pohon Ditanam</p>
         </div>
     </div>
 
-    <!-- Floating Card 3: Eco point mini -->
-    <div class="absolute top-24 sm:top-32 right-8 sm:right-4 z-0 bg-surface-container-lowest/90 backdrop-blur-xl border border-white/60 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float-4">
+    <!-- Floating Card 3: Eco point mini (Desktop) -->
+    <div class="hidden sm:flex hero-float-eco absolute top-24 sm:top-32 right-8 sm:right-4 z-0 bg-surface-container-lowest/90 backdrop-blur-xl border border-white/60 px-5 py-3 rounded-2xl shadow-xl items-center gap-3 animate-float-4">
         <span class="material-symbols-outlined text-[#FF9100] text-3xl" style="font-variation-settings: 'FILL' 1;">stars</span>
         <div>
             <p class="text-sm font-black text-on-surface leading-none">+250</p>
             <p class="text-[10px] font-bold text-outline uppercase tracking-widest mt-1">Eco-Poin</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Hero Stats -->
+<div class="sm:hidden mt-6 space-y-3 fade-up">
+    <div class="bg-surface-container-lowest/90 border border-white/60 rounded-2xl px-4 py-3 shadow-[0_12px_24px_rgba(0,0,0,0.06)] flex items-center gap-3">
+        <div class="bg-tertiary-fixed-dim/30 p-3 rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary text-2xl">storefront</span>
+        </div>
+        <div>
+            <p class="text-[10px] text-tertiary font-bold uppercase tracking-widest mb-1">Pemberdayaan</p>
+            <p class="text-xl font-black text-on-surface leading-none">1.250+</p>
+            <p class="text-xs font-semibold text-on-surface-variant mt-1">Mitra UMKM Aktif</p>
+        </div>
+    </div>
+
+    <div class="bg-surface-container-lowest/90 border border-white/60 rounded-2xl px-4 py-3 shadow-[0_12px_24px_rgba(0,0,0,0.06)] flex items-center gap-3">
+        <div class="bg-primary/10 p-3 rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">forest</span>
+        </div>
+        <div>
+            <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Dampak Positif</p>
+            <p class="text-xl font-black text-on-surface leading-none">50 rb</p>
+            <p class="text-xs font-semibold text-on-surface-variant mt-1">Pohon Ditanam</p>
         </div>
     </div>
 </div>
@@ -211,7 +283,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Feature 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2">
+<div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl flex flex-col gap-5 md:gap-6 transition-transform hover:-translate-y-2">
 <div class="w-14 h-14 bg-secondary-fixed rounded-2xl flex items-center justify-center">
 <span class="material-symbols-outlined text-primary scale-125" data-icon="handshake">handshake</span>
 </div>
@@ -219,7 +291,7 @@
 <p class="text-on-surface-variant leading-relaxed">Pemberdayaan ekonomi lokal melalui kemitraan adil dengan pengrajin seluruh nusantara.</p>
 </div>
 <!-- Feature 2 -->
-<div class="bg-primary text-on-primary p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2 shadow-lg">
+<div class="bg-primary text-on-primary p-6 md:p-8 rounded-3xl flex flex-col gap-5 md:gap-6 transition-transform hover:-translate-y-2 shadow-lg">
 <div class="w-14 h-14 bg-on-primary-container rounded-2xl flex items-center justify-center">
 <span class="material-symbols-outlined text-primary scale-125" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
 </div>
@@ -227,7 +299,7 @@
 <p class="text-on-primary/80 leading-relaxed">Setiap produk dibuat dari bahan alami tanpa pestisida atau bahan kimia berbahaya.</p>
 </div>
 <!-- Feature 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-3xl flex flex-col gap-6 transition-transform hover:-translate-y-2">
+<div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl flex flex-col gap-5 md:gap-6 transition-transform hover:-translate-y-2">
 <div class="w-14 h-14 bg-tertiary-fixed rounded-2xl flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary scale-125" data-icon="local_shipping">local_shipping</span>
 </div>
@@ -243,8 +315,13 @@
 <div class="max-w-xl">
 <h2 class="font-headline text-4xl text-primary font-bold mb-4 tracking-tight">Koleksi Terpilih</h2>
 <p class="text-on-surface-variant text-lg">Sentuhan keindahan alam Indonesia untuk kenyamanan gaya hidup Anda sehari-hari.</p>
+<div class="mt-5 flex flex-wrap gap-2">
+<a href="category.html?category=fashion" class="px-4 py-2 rounded-full bg-secondary-fixed/70 text-on-secondary-container text-xs font-bold tracking-wide hover:bg-secondary-fixed transition-colors">Fashion</a>
+<a href="category.html?category=home" class="px-4 py-2 rounded-full bg-secondary-fixed/70 text-on-secondary-container text-xs font-bold tracking-wide hover:bg-secondary-fixed transition-colors">Kebutuhan Rumah</a>
+<a href="category.html?category=beauty" class="px-4 py-2 rounded-full bg-secondary-fixed/70 text-on-secondary-container text-xs font-bold tracking-wide hover:bg-secondary-fixed transition-colors">Perawatan Diri</a>
 </div>
-<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+</div>
+<a class="text-primary font-bold flex items-center gap-2 group" href="category.html">
                     Lihat Semua Katalog 
                     <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
 </a>
@@ -403,22 +480,50 @@
 </div>
 </footer>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-[#FFFBE6]/80 glass-nav rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)]">
-<div class="flex flex-col items-center justify-center bg-[#D5ED9F] text-[#00712D] rounded-2xl px-5 py-2 Active: scale-95 transition-all duration-200">
-<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-inter text-[10px] font-medium">Beranda</span>
-</div>
-<div class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
-<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
-<span class="font-inter text-[10px] font-medium">Katalog</span>
-</div>
-<div class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
-<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
-<span class="font-inter text-[10px] font-medium">Keranjang</span>
-</div>
-<a href="login.html" class="flex flex-col items-center justify-center text-[#1d1c10] opacity-60 px-5 py-2 hover:bg-[#dedac6]/30 rounded-2xl">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-inter text-[10px] font-medium">Masuk</span>
+<nav data-mobile-nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#FFFBE6]/85 glass-nav rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)] px-2 pb-5 pt-2">
+<div class="relative flex items-center justify-between max-w-md mx-auto">
+<div data-nav-indicator class="absolute left-0 top-0 h-full rounded-2xl bg-[#D5ED9F] transition-all duration-300 ease-out"></div>
+<a href="index.html" data-nav-item="index.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Beranda</span>
 </a>
+<a href="dashboard.html" data-nav-item="dashboard.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Katalog</span>
+</a>
+<a href="category.html" data-nav-item="category.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Kategori</span>
+</a>
+<a href="promo.html" data-nav-item="promo.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">local_offer</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Promo</span>
+</a>
+<a href="about.html" data-nav-item="about.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span data-nav-label class="block text-[10px] mt-0.5">Tentang</span>
+</a>
+</div>
 </nav>
+<script src="/js/mobile-nav.js"></script>
+<script>
+    (function () {
+        const elements = document.querySelectorAll('.fade-up');
+        if (!elements.length) return;
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -10% 0px',
+            threshold: 0.15
+        });
+
+        elements.forEach((el) => observer.observe(el));
+    })();
+</script>
 </body></html>

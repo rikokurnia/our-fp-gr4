@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HijauLokal | Kategori Produk</title>
+  <meta name="description" content="Filter produk UMKM hijau berdasarkan kategori dan cari produk favoritmu di HijauLokal." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hijaulokal.id/category.html" />
+  <meta property="og:title" content="HijauLokal | Kategori Produk" />
+  <meta property="og:description" content="Telusuri produk ramah lingkungan berdasarkan kategori di HijauLokal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hijaulokal.id/category.html" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#005620',
+            secondary: '#526527',
+            surface: '#fefae5',
+            card: '#ffffff',
+            accent: '#ff9100',
+            'on-background': '#1d1c10',
+            'on-surface': '#1d1c10',
+            'on-surface-variant': '#3f493e',
+            'outline-variant': '#becabb',
+            'surface-container': '#f2eeda',
+            'surface-container-low': '#f8f4df',
+            'secondary-container': '#d4ec9e',
+            'on-secondary-container': '#576b2c',
+            error: '#ba1a1a',
+            tertiary: '#703d00'
+          },
+          fontFamily: {
+            headline: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-[#1d1c10] font-body min-h-screen pb-24 md:pb-0">
+  <header class="sticky top-0 z-40 bg-[#FFFBE6]/90 backdrop-blur border-b border-[#00712D]/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-extrabold text-[#00712D] font-headline">HijauLokal</a>
+      <nav class="hidden md:flex gap-8 text-sm font-semibold">
+        <a href="index.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Beranda</a>
+        <a href="dashboard.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Katalog</a>
+        <a href="category.html" class="text-[#00712D] border-b-2 border-[#00712D] pb-1">Kategori</a>
+        <a href="promo.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Promo</a>
+        <a href="about.html" class="text-[#1d1c10] opacity-70 hover:opacity-100">Tentang Kami</a>
+      </nav>
+      <a href="login.html" class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">Masuk</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+    <section class="rounded-3xl bg-gradient-to-r from-[#005620] to-[#3f7a27] text-white p-8 md:p-10">
+      <p class="text-xs font-bold tracking-widest uppercase opacity-90">Kategori Produk</p>
+      <h1 class="font-headline text-3xl md:text-5xl font-extrabold mt-3">Temukan Produk Sesuai Kebutuhanmu</h1>
+      <p class="mt-4 text-white/90 max-w-2xl">Pilih kategori untuk melihat koleksi produk lokal ramah lingkungan, dari fashion harian hingga kebutuhan rumah tangga.</p>
+    </section>
+
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="summary-cards"></section>
+
+    <section class="bg-card rounded-3xl border border-[#dfe7d4] p-5 md:p-6 shadow-sm space-y-5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <h2 class="font-headline text-2xl font-bold text-primary">Jelajahi Kategori</h2>
+        <div class="relative max-w-md w-full">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+          <input id="search-input" type="text" placeholder="Cari nama produk..." class="w-full rounded-xl border border-[#d3ddc5] py-2.5 pl-10 pr-3 focus:ring-2 focus:ring-[#7ddb89] focus:border-transparent" />
+        </div>
+      </div>
+
+      <div id="category-tabs" class="flex flex-wrap gap-2"></div>
+
+      <p id="result-text" class="text-sm text-secondary font-semibold"></p>
+
+      <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-[#d9e2cc] py-8 px-6 text-center text-sm text-secondary">
+    <p>© 2026 HijauLokal. Belanja lokal, berdampak global.</p>
+  </footer>
+
+  <nav data-mobile-nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#FFFBE6]/90 backdrop-blur rounded-t-3xl shadow-[0px_-12px_32px_rgba(29,28,16,0.06)] px-2 pb-5 pt-2">
+    <div class="relative flex items-center justify-between max-w-md mx-auto">
+      <div data-nav-indicator class="absolute left-0 top-0 h-full rounded-2xl bg-[#D5ED9F] transition-all duration-300 ease-out"></div>
+      <a href="index.html" data-nav-item="index.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Beranda</span>
+      </a>
+      <a href="dashboard.html" data-nav-item="dashboard.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">storefront</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Katalog</span>
+      </a>
+      <a href="category.html" data-nav-item="category.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Kategori</span>
+      </a>
+      <a href="promo.html" data-nav-item="promo.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">local_offer</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Promo</span>
+      </a>
+      <a href="about.html" data-nav-item="about.html" class="relative z-10 flex-1 min-w-0 py-2 text-center transition-colors">
+        <span class="material-symbols-outlined text-[20px]">info</span>
+        <span data-nav-label class="block text-[10px] mt-0.5">Tentang</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="/js/mobile-nav.js"></script>
+  <script>
+    const categoryLabelMap = {
+      all: 'Semua',
+      fashion: 'Fashion',
+      home: 'Kebutuhan Rumah',
+      beauty: 'Perawatan Diri'
+    };
+
+    let allProducts = [];
+    let activeCategory = 'all';
+
+    const tabsEl = document.getElementById('category-tabs');
+    const gridEl = document.getElementById('product-grid');
+    const resultEl = document.getElementById('result-text');
+    const summaryEl = document.getElementById('summary-cards');
+    const searchInput = document.getElementById('search-input');
+
+    function parseCategoryFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const queryCategory = (params.get('category') || 'all').toLowerCase();
+      return categoryLabelMap[queryCategory] ? queryCategory : 'all';
+    }
+
+    function currency(value) {
+      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
+    }
+
+    function categoryList() {
+      const fromData = [...new Set(allProducts.map((item) => item.category))].sort();
+      return ['all', ...fromData];
+    }
+
+    function createSummaryCards() {
+      const categories = categoryList().filter((key) => key !== 'all');
+      summaryEl.innerHTML = categories.map((key) => {
+        const count = allProducts.filter((item) => item.category === key).length;
+        return `
+          <article class="rounded-2xl bg-card border border-[#dfe7d4] p-4 shadow-sm">
+            <p class="text-xs uppercase tracking-widest text-secondary font-bold">${categoryLabelMap[key] || key}</p>
+            <p class="mt-2 text-3xl font-extrabold text-primary font-headline">${count}</p>
+            <p class="text-sm text-secondary">produk tersedia</p>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function createTabs() {
+      tabsEl.innerHTML = categoryList().map((key) => {
+        const activeClass = key === activeCategory ? 'bg-primary text-white' : 'bg-[#edf3e3] text-secondary hover:bg-[#dce8c8]';
+        return `<button data-category="${key}" class="category-tab px-4 py-2 rounded-full text-sm font-bold transition-colors ${activeClass}">${categoryLabelMap[key] || key}</button>`;
+      }).join('');
+
+      document.querySelectorAll('.category-tab').forEach((button) => {
+        button.addEventListener('click', () => {
+          activeCategory = button.dataset.category;
+          createTabs();
+          renderProducts();
+        });
+      });
+    }
+
+    function filteredProducts() {
+      const keyword = (searchInput.value || '').toLowerCase().trim();
+      return allProducts.filter((item) => {
+        const matchCategory = activeCategory === 'all' || item.category === activeCategory;
+        const matchSearch = !keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword);
+        return matchCategory && matchSearch;
+      });
+    }
+
+    function renderProducts() {
+      const items = filteredProducts();
+      const activeLabel = categoryLabelMap[activeCategory] || activeCategory;
+      resultEl.textContent = `${items.length} produk ditemukan di kategori ${activeLabel}.`;
+
+      if (!items.length) {
+        gridEl.innerHTML = '<div class="col-span-full rounded-2xl bg-[#fff5f2] border border-[#ffd8c9] p-6 text-[#8b3e1b] font-semibold">Tidak ada produk yang cocok. Coba kata kunci lain.</div>';
+        return;
+      }
+
+      gridEl.innerHTML = items.map((item) => `
+        <article class="bg-surface-container-low rounded-2xl overflow-hidden group hover:shadow-xl transition-shadow duration-300 flex flex-col border border-outline-variant/30">
+          <div class="relative aspect-square overflow-hidden bg-surface-container">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm border border-secondary/10">
+                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">eco</span> ${item.eco ? 'Ramah Lingkungan' : 'Reguler'}
+              </span>
+            </div>
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm">favorite</span>
+            </button>
+          </div>
+          <div class="p-4 space-y-2 flex flex-col flex-1">
+            <p class="text-[10px] font-bold text-secondary uppercase tracking-tighter">${categoryLabelMap[item.category] || item.category}</p>
+            <h3 class="text-on-background font-bold text-sm line-clamp-2 leading-snug flex-1">${item.name}</h3>
+            <div class="flex items-baseline gap-1 mt-auto">
+              <span class="text-xs text-on-surface-variant font-medium">Rp</span>
+              <span class="text-lg font-extrabold text-primary">${item.price.toLocaleString('id-ID')}</span>
+            </div>
+            <a href="dashboard.html" class="w-full bg-[#925100] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 hover:bg-[#703d00] transition-colors active:scale-95 shadow-sm">
+              <span class="material-symbols-outlined text-sm">storefront</span>
+              Lihat di Katalog
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function init() {
+      activeCategory = parseCategoryFromUrl();
+
+      try {
+        const response = await fetch('/data/products.json');
+        if (!response.ok) throw new Error('Gagal memuat data produk');
+        const payload = await response.json();
+        allProducts = payload.products || [];
+        createSummaryCards();
+        createTabs();
+        renderProducts();
+      } catch (_error) {
+        gridEl.innerHTML = '<div class="col-span-full rounded-2xl bg-[#fff5f2] border border-[#ffd8c9] p-6 text-[#8b3e1b] font-semibold">Data produk gagal dimuat. Coba reload halaman.</div>';
+      }
+    }
+
+    searchInput.addEventListener('input', renderProducts);
+    init();
+  </script>
+</body>
+</html>
