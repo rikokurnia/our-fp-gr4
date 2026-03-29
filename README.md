@@ -67,13 +67,12 @@ Platform e-katalog UMKM hijau berbasis web yang menampilkan produk ramah lingkun
 ## Arsitektur Singkat
 - Server melayani semua file statis dari folder `views`.
 - Data produk saat ini bersumber dari `views/data/products.json`.
-- Konfigurasi Firebase web diambil frontend melalui endpoint server `GET /api/public-config`.
+- Konfigurasi Firebase web dibaca langsung dari `views/js/firebase-config.js`.
 - Status keranjang disimpan di browser (`localStorage`).
 
 ## Endpoint Server
 - `GET /`: halaman beranda.
 - `GET /api/health`: health check server.
-- `GET /api/public-config`: expose Firebase web config dari environment variable.
 
 ## Keamanan dan Hardening yang Sudah Aktif
 - `helmet` untuk header keamanan HTTP.
@@ -100,11 +99,7 @@ npm install
 cp .env.example .env
 ```
 
-3. Isi nilai Firebase di `.env`.
-- `FIREBASE_API_KEY`
-- `FIREBASE_AUTH_DOMAIN`
-- `FIREBASE_PROJECT_ID`
-- `FIREBASE_APP_ID`
+3. (Opsional) Isi nilai Firebase di `.env` jika tetap ingin memakai endpoint backend untuk eksperimen.
 
 4. Jalankan mode development.
 
@@ -122,6 +117,13 @@ http://localhost:3000
 - `npm run dev`: menjalankan server watch mode + auto-clean port 3000.
 - `npm start`: menjalankan server production mode.
 
+## Konfigurasi Firebase Auth
+Firebase Web Config saat ini disimpan langsung di [views/js/firebase-config.js](views/js/firebase-config.js), sehingga deploy di Vercel tidak membutuhkan env Firebase.
+
+Agar Login Google berhasil di production, pastikan di Firebase Console:
+1. Google provider sudah `Enabled`.
+2. Domain Vercel Anda ada di `Authentication -> Settings -> Authorized domains`.
+
 ## Konfigurasi Environment
 Lihat file `.env.example`:
 
@@ -131,13 +133,14 @@ HOST=0.0.0.0
 PORT=3000
 ALLOWED_ORIGIN=*
 
+# Dipakai oleh endpoint backend /api/public-config (opsional)
 FIREBASE_API_KEY=your_firebase_api_key
 FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_APP_ID=1:1234567890:web:your_app_id
 ```
 
-Catatan: Firebase Web config bukan secret backend murni, namun tetap disimpan di env agar tidak hardcoded di source code.
+Catatan: Firebase Web config bukan secret backend murni. Untuk project ini, config dipakai langsung di frontend agar deploy Vercel lebih sederhana.
 
 ## Struktur Folder
 ```text
