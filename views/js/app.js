@@ -171,10 +171,15 @@ function updateCartUI() {
     // Badges update
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (totalItems > 0) {
-        cartBadge?.classList.remove('hidden');
-        cartBadge.textContent = totalItems;
-        mobileCartBadge?.classList.remove('hidden');
-        mobileCartBadge.textContent = totalItems;
+        if (cartBadge) {
+            cartBadge.classList.remove('hidden');
+            cartBadge.textContent = String(totalItems);
+        }
+
+        if (mobileCartBadge) {
+            mobileCartBadge.classList.remove('hidden');
+            mobileCartBadge.textContent = String(totalItems);
+        }
     } else {
         cartBadge?.classList.add('hidden');
         mobileCartBadge?.classList.add('hidden');
