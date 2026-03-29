@@ -47,10 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileCartBtn?.addEventListener('click', toggleCart);
     closeCartBtn?.addEventListener('click', toggleCart);
     cartOverlay?.addEventListener('click', toggleCart);
+
+    // Delegate cart item interactions to avoid brittle inline handlers
+    productGrid?.addEventListener('click', handleProductGridClick);
+    cartItemsContainer?.addEventListener('click', handleCartItemsClick);
     
     // Event Listener for Shipping calc
     calcShippingBtn?.addEventListener('click', handleShippingCalc);
 });
+
+// Compatibility fallback for any existing inline usage
+window.toggleCart = toggleCart;
 
 /* ================================
    1. PRODUCTS FETCH API (Point 1&3)
@@ -104,7 +111,7 @@ function renderProducts(items) {
                     <span class="text-xs text-outline font-medium">Rp</span>
                     <span class="text-lg font-extrabold text-primary">${product.price.toLocaleString('id-ID')}</span>
                 </div>
-                <button onclick="addToCart(${product.id})" class="w-full bg-[#925100] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 hover:bg-[#703d00] transition-colors active:scale-95 shadow-sm">
+                <button data-action="add-to-cart" data-product-id="${product.id}" class="w-full bg-[#925100] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 hover:bg-[#703d00] transition-colors active:scale-95 shadow-sm">
                     <span class="material-symbols-outlined text-sm">shopping_basket</span>
                     Tambah ke Keranjang
                 </button>
@@ -117,7 +124,7 @@ function renderProducts(items) {
 /* ================================
    2. SHOPPING CART LOGIC (Point 2)
 ================================ */
-window.addToCart = (productId) => {
+function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
@@ -135,9 +142,9 @@ window.addToCart = (productId) => {
     if(cartDrawer && cartDrawer.classList.contains('translate-x-full')) {
         toggleCart();
     }
-};
+}
 
-window.updateQty = (productId, delta) => {
+function updateQty(productId, delta) {
     const item = cart.find(i => i.id === productId);
     if (!item) return;
     
@@ -148,13 +155,13 @@ window.updateQty = (productId, delta) => {
     
     saveCart();
     updateCartUI();
-};
+}
 
-window.removeFromCart = (productId) => {
+function removeFromCart(productId) {
     cart = cart.filter(i => i.id !== productId);
     saveCart();
     updateCartUI();
-};
+}
 
 function saveCart() {
     localStorage.setItem('hijaulokal_cart', JSON.stringify(cart));
@@ -182,7 +189,7 @@ function updateCartUI() {
             <div class="flex flex-col items-center justify-center h-full text-center opacity-50 space-y-4 pt-10">
                 <span class="material-symbols-outlined text-6xl">production_quantity_limits</span>
                 <p class="font-medium text-sm">Keranjang belanja Anda masih kosong.</p>
-                <button onclick="toggleCart()" class="text-primary text-xs font-bold border border-primary px-4 py-1.5 rounded-full hover:bg-primary/5">Pilih Produk</button>
+                <button data-action="close-cart-empty" class="text-primary text-xs font-bold border border-primary px-4 py-1.5 rounded-full hover:bg-primary/5">Pilih Produk</button>
             </div>
         `;
     } else {
@@ -197,18 +204,18 @@ function updateCartUI() {
                     <div class="pr-6 relative">
                         <h4 class="text-xs font-bold text-on-surface line-clamp-2 leading-tight">${item.name}</h4>
                         <p class="text-[9px] text-secondary font-bold mt-1 uppercase">${item.weight}kg • ${item.eco ? 'ECO-FRIENDLY' : 'REGULER'}</p>
-                        <button onclick="removeFromCart(${item.id})" class="absolute -top-1 -right-1 text-error opacity-50 hover:opacity-100 transition-opacity p-1">
+                        <button data-action="remove-item" data-product-id="${item.id}" class="absolute -top-1 -right-1 text-error opacity-50 hover:opacity-100 transition-opacity p-1">
                             <span class="material-symbols-outlined text-[16px]">close</span>
                         </button>
                     </div>
                     <div class="flex justify-between items-center mt-2">
                         <p class="font-extrabold text-primary text-sm">${formatRupiah(item.price)}</p>
                         <div class="flex items-center gap-2 bg-surface-container rounded-lg p-1">
-                            <button onclick="updateQty(${item.id}, -1)" class="w-6 h-6 flex items-center justify-center rounded-md bg-surface-container-lowest hover:bg-white shadow-sm text-on-surface-variant active:scale-95">
+                            <button data-action="decrease-qty" data-product-id="${item.id}" class="w-6 h-6 flex items-center justify-center rounded-md bg-surface-container-lowest hover:bg-white shadow-sm text-on-surface-variant active:scale-95">
                                 <span class="material-symbols-outlined text-[10px]">remove</span>
                             </button>
                             <span class="text-xs font-bold w-4 text-center text-on-surface">${item.quantity}</span>
-                            <button onclick="updateQty(${item.id}, 1)" class="w-6 h-6 flex items-center justify-center rounded-md bg-surface-container-lowest hover:bg-white shadow-sm text-on-surface-variant active:scale-95">
+                            <button data-action="increase-qty" data-product-id="${item.id}" class="w-6 h-6 flex items-center justify-center rounded-md bg-surface-container-lowest hover:bg-white shadow-sm text-on-surface-variant active:scale-95">
                                 <span class="material-symbols-outlined text-[10px]">add</span>
                             </button>
                         </div>
@@ -220,6 +227,44 @@ function updateCartUI() {
     }
 
     calculateTotals();
+}
+
+function handleProductGridClick(event) {
+    const button = event.target.closest('[data-action="add-to-cart"]');
+    if (!button) return;
+
+    const productId = Number(button.dataset.productId);
+    if (!Number.isFinite(productId)) return;
+    addToCart(productId);
+}
+
+function handleCartItemsClick(event) {
+    const button = event.target.closest('button[data-action]');
+    if (!button) return;
+
+    const action = button.dataset.action;
+    const productId = Number(button.dataset.productId);
+
+    if (action === 'close-cart-empty') {
+        toggleCart();
+        return;
+    }
+
+    if (!Number.isFinite(productId)) return;
+
+    if (action === 'remove-item') {
+        removeFromCart(productId);
+        return;
+    }
+
+    if (action === 'decrease-qty') {
+        updateQty(productId, -1);
+        return;
+    }
+
+    if (action === 'increase-qty') {
+        updateQty(productId, 1);
+    }
 }
 
 function toggleCart() {
