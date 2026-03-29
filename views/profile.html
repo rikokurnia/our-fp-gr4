@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Saya | HijauLokal</title>
+  <meta name="description" content="Kelola profil akun HijauLokal Anda dan lihat ringkasan akun dengan cepat."/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="canonical" href="https://hijaulokal.id/profile.html"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tertiary: '#703d00',
+            secondary: '#526527',
+            primary: '#005620',
+            background: '#fefae5',
+            surface: '#f8f4df',
+            onBackground: '#1d1c10'
+          },
+          fontFamily: {
+            headline: ['Plus Jakarta Sans'],
+            body: ['Inter']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background text-onBackground font-body min-h-screen">
+  <header class="sticky top-0 z-20 bg-[#FFFBE6]/90 backdrop-blur border-b border-[#00712D]/10">
+    <div class="max-w-5xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+      <a href="dashboard.html" class="inline-flex items-center gap-2 text-primary font-bold">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Kembali ke Katalog
+      </a>
+      <a href="index.html" class="text-xl md:text-2xl font-extrabold text-[#00712D] font-headline">HijauLokal</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-10 md:py-14 space-y-8">
+    <section class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#eaf8c8] via-[#f3efd6] to-[#ffe2c8] border border-[#bfd6a9] shadow-lg p-6 md:p-10">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/40 rounded-full blur-2xl"></div>
+      <div class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="flex items-center gap-4 md:gap-5 min-w-0">
+          <div class="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white/80 border border-white shadow-sm flex items-center justify-center text-primary overflow-hidden">
+            <img id="profile-avatar" class="w-full h-full object-cover hidden" alt="Foto profil" />
+            <span id="profile-avatar-fallback" class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">person</span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[11px] uppercase tracking-[0.2em] text-secondary font-bold mb-1">Akun Anda</p>
+            <h1 id="profile-name" class="font-headline text-2xl md:text-4xl font-extrabold text-primary truncate">Pengguna HijauLokal</h1>
+            <p id="profile-email" class="text-sm md:text-base text-[#3f493e] truncate">-</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <label class="inline-flex items-center justify-center gap-2 bg-white text-[#703d00] border border-[#e7d7c7] px-4 py-3 rounded-xl font-bold hover:bg-[#fff4e9] active:scale-95 transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+            Ubah Foto
+            <input id="profile-image-input" type="file" accept="image/*" class="hidden" />
+          </label>
+          <button id="profile-logout-btn" type="button" class="inline-flex items-center justify-center gap-2 bg-[#703d00] text-white px-5 py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+            Keluar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <article class="bg-white/80 border border-[#dcd5bc] rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-secondary font-bold mb-2">Status Akun</p>
+        <p id="profile-status" class="text-2xl font-extrabold text-primary">Aktif</p>
+        <p class="text-sm text-[#576b2c] mt-1">Siap belanja produk lokal hijau.</p>
+      </article>
+      <article class="bg-white/80 border border-[#dcd5bc] rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-secondary font-bold mb-2">Metode Login</p>
+        <p id="profile-provider" class="text-2xl font-extrabold text-primary">Email</p>
+        <p class="text-sm text-[#576b2c] mt-1">Bisa juga gunakan Google Sign-In.</p>
+      </article>
+      <article class="bg-white/80 border border-[#dcd5bc] rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-secondary font-bold mb-2">Kontribusi</p>
+        <p class="text-2xl font-extrabold text-primary">12rb+</p>
+        <p class="text-sm text-[#576b2c] mt-1">Komunitas pelanggan HijauLokal.</p>
+      </article>
+    </section>
+
+    <section class="bg-white/70 border border-[#dcd5bc] rounded-3xl p-6 md:p-8 space-y-4">
+      <h2 class="font-headline text-2xl font-extrabold text-primary">Preferensi Cepat</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <label class="flex items-center justify-between gap-3 bg-[#f8f4df] border border-[#e6dfc4] rounded-xl px-4 py-3">
+          <span class="text-sm font-semibold text-[#3f493e]">Notifikasi promo mingguan</span>
+          <input id="pref-weekly-promo" type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+        </label>
+        <label class="flex items-center justify-between gap-3 bg-[#f8f4df] border border-[#e6dfc4] rounded-xl px-4 py-3">
+          <span class="text-sm font-semibold text-[#3f493e]">Rekomendasi produk personal</span>
+          <input id="pref-personal-reco" type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+        </label>
+      </div>
+      <p class="text-xs text-[#6f7a6d]">Preferensi disimpan otomatis di perangkat ini dan akan tetap aktif saat Anda membuka kembali halaman.</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initFirebaseAuth, logoutCurrentUser, subscribeToAuthState } from '/js/firebase-auth.js';
+
+    const profileName = document.getElementById('profile-name');
+    const profileEmail = document.getElementById('profile-email');
+    const profileProvider = document.getElementById('profile-provider');
+    const profileStatus = document.getElementById('profile-status');
+    const logoutBtn = document.getElementById('profile-logout-btn');
+    const profileAvatar = document.getElementById('profile-avatar');
+    const profileAvatarFallback = document.getElementById('profile-avatar-fallback');
+    const profileImageInput = document.getElementById('profile-image-input');
+    const weeklyPromoPref = document.getElementById('pref-weekly-promo');
+    const personalRecoPref = document.getElementById('pref-personal-reco');
+
+    const PROFILE_AVATAR_KEY = 'hijaulokal_profile_avatar';
+    const PREF_KEY = 'hijaulokal_profile_prefs';
+
+    function toDisplayName(user) {
+      return user?.displayName || user?.email || 'Pengguna';
+    }
+
+    function getProviderName(user) {
+      const providers = user?.providerData || [];
+      if (providers.some((provider) => provider.providerId === 'google.com')) {
+        return 'Google';
+      }
+      if (providers.some((provider) => provider.providerId === 'password')) {
+        return 'Email';
+      }
+      return 'Akun';
+    }
+
+    function setAvatarPreview(dataUrl) {
+      if (!profileAvatar || !profileAvatarFallback) return;
+
+      if (dataUrl) {
+        profileAvatar.src = dataUrl;
+        profileAvatar.classList.remove('hidden');
+        profileAvatarFallback.classList.add('hidden');
+        return;
+      }
+
+      profileAvatar.removeAttribute('src');
+      profileAvatar.classList.add('hidden');
+      profileAvatarFallback.classList.remove('hidden');
+    }
+
+    function loadPreferences() {
+      try {
+        const prefs = JSON.parse(localStorage.getItem(PREF_KEY) || '{}');
+        weeklyPromoPref.checked = prefs.weeklyPromo !== false;
+        personalRecoPref.checked = prefs.personalRecommendation !== false;
+      } catch (_error) {
+        weeklyPromoPref.checked = true;
+        personalRecoPref.checked = true;
+      }
+    }
+
+    function savePreferences() {
+      localStorage.setItem(PREF_KEY, JSON.stringify({
+        weeklyPromo: Boolean(weeklyPromoPref?.checked),
+        personalRecommendation: Boolean(personalRecoPref?.checked)
+      }));
+    }
+
+    initFirebaseAuth()
+      .then(() => subscribeToAuthState((user) => {
+        if (!user) {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        profileName.textContent = toDisplayName(user);
+        profileEmail.textContent = user.email || '-';
+        profileProvider.textContent = getProviderName(user);
+        profileStatus.textContent = user.emailVerified ? 'Terverifikasi' : 'Aktif';
+        setAvatarPreview(localStorage.getItem(PROFILE_AVATAR_KEY) || '');
+      }))
+      .catch(() => {
+        window.location.href = 'login.html';
+      });
+
+    loadPreferences();
+    weeklyPromoPref?.addEventListener('change', savePreferences);
+    personalRecoPref?.addEventListener('change', savePreferences);
+
+    profileImageInput?.addEventListener('change', (event) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = String(reader.result || '');
+        localStorage.setItem(PROFILE_AVATAR_KEY, dataUrl);
+        setAvatarPreview(dataUrl);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    logoutBtn?.addEventListener('click', async () => {
+      try {
+        await logoutCurrentUser();
+      } finally {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</body>
+</html>

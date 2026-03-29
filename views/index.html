@@ -155,10 +155,14 @@
 <a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="promo.html">Promo</a>
 <a class="text-[#1d1c10] opacity-70 hover:opacity-100 transition-opacity duration-300" href="about.html">Tentang Kami</a>
 </nav>
-<div class="flex items-center">
-<a href="login.html" class="bg-[#FF9100] text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 hover:brightness-105 shadow-md">
+<div class="flex items-center gap-3">
+<a data-auth-login-link href="login.html" class="bg-[#FF9100] text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 hover:brightness-105 shadow-md">
                 Masuk
             </a>
+<button data-profile-trigger type="button" class="hidden w-10 h-10 rounded-full bg-[#D5ED9F] text-[#00712D] border border-[#00712D]/15 shadow-sm items-center justify-center" aria-haspopup="dialog" aria-expanded="false" title="Profil Saya">
+<img data-profile-trigger-avatar class="w-full h-full rounded-full object-cover hidden" alt="Avatar akun" />
+<span data-profile-trigger-icon class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">person</span>
+</button>
 </div>
 </div>
 </header>
@@ -506,6 +510,7 @@
 </div>
 </nav>
 <script src="/js/mobile-nav.js"></script>
+<script type="module" src="/js/profile-menu.js"></script>
 <script>
     (function () {
         const elements = document.querySelectorAll('.fade-up');
