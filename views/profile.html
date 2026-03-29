@@ -8,6 +8,8 @@
   <meta name="robots" content="noindex,follow"/>
   <link rel="canonical" href="https://hijaulokal.id/profile.html"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="/css/profile-ui.css" rel="stylesheet"/>
+  <link href="/css/toast.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script id="tailwind-config">
     tailwind.config = {
@@ -110,112 +112,7 @@
     </section>
   </main>
 
-  <script type="module">
-    import { initFirebaseAuth, logoutCurrentUser, subscribeToAuthState } from '/js/firebase-auth.js';
-
-    const profileName = document.getElementById('profile-name');
-    const profileEmail = document.getElementById('profile-email');
-    const profileProvider = document.getElementById('profile-provider');
-    const profileStatus = document.getElementById('profile-status');
-    const logoutBtn = document.getElementById('profile-logout-btn');
-    const profileAvatar = document.getElementById('profile-avatar');
-    const profileAvatarFallback = document.getElementById('profile-avatar-fallback');
-    const profileImageInput = document.getElementById('profile-image-input');
-    const weeklyPromoPref = document.getElementById('pref-weekly-promo');
-    const personalRecoPref = document.getElementById('pref-personal-reco');
-
-    const PROFILE_AVATAR_KEY = 'hijaulokal_profile_avatar';
-    const PREF_KEY = 'hijaulokal_profile_prefs';
-
-    function toDisplayName(user) {
-      return user?.displayName || user?.email || 'Pengguna';
-    }
-
-    function getProviderName(user) {
-      const providers = user?.providerData || [];
-      if (providers.some((provider) => provider.providerId === 'google.com')) {
-        return 'Google';
-      }
-      if (providers.some((provider) => provider.providerId === 'password')) {
-        return 'Email';
-      }
-      return 'Akun';
-    }
-
-    function setAvatarPreview(dataUrl) {
-      if (!profileAvatar || !profileAvatarFallback) return;
-
-      if (dataUrl) {
-        profileAvatar.src = dataUrl;
-        profileAvatar.classList.remove('hidden');
-        profileAvatarFallback.classList.add('hidden');
-        return;
-      }
-
-      profileAvatar.removeAttribute('src');
-      profileAvatar.classList.add('hidden');
-      profileAvatarFallback.classList.remove('hidden');
-    }
-
-    function loadPreferences() {
-      try {
-        const prefs = JSON.parse(localStorage.getItem(PREF_KEY) || '{}');
-        weeklyPromoPref.checked = prefs.weeklyPromo !== false;
-        personalRecoPref.checked = prefs.personalRecommendation !== false;
-      } catch (_error) {
-        weeklyPromoPref.checked = true;
-        personalRecoPref.checked = true;
-      }
-    }
-
-    function savePreferences() {
-      localStorage.setItem(PREF_KEY, JSON.stringify({
-        weeklyPromo: Boolean(weeklyPromoPref?.checked),
-        personalRecommendation: Boolean(personalRecoPref?.checked)
-      }));
-    }
-
-    initFirebaseAuth()
-      .then(() => subscribeToAuthState((user) => {
-        if (!user) {
-          window.location.href = 'login.html';
-          return;
-        }
-
-        profileName.textContent = toDisplayName(user);
-        profileEmail.textContent = user.email || '-';
-        profileProvider.textContent = getProviderName(user);
-        profileStatus.textContent = user.emailVerified ? 'Terverifikasi' : 'Aktif';
-        setAvatarPreview(localStorage.getItem(PROFILE_AVATAR_KEY) || '');
-      }))
-      .catch(() => {
-        window.location.href = 'login.html';
-      });
-
-    loadPreferences();
-    weeklyPromoPref?.addEventListener('change', savePreferences);
-    personalRecoPref?.addEventListener('change', savePreferences);
-
-    profileImageInput?.addEventListener('change', (event) => {
-      const file = event.target.files?.[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        const dataUrl = String(reader.result || '');
-        localStorage.setItem(PROFILE_AVATAR_KEY, dataUrl);
-        setAvatarPreview(dataUrl);
-      };
-      reader.readAsDataURL(file);
-    });
-
-    logoutBtn?.addEventListener('click', async () => {
-      try {
-        await logoutCurrentUser();
-      } finally {
-        window.location.href = 'login.html';
-      }
-    });
-  </script>
+  <script src="/js/toast.js"></script>
+  <script type="module" src="/js/profile-page.js"></script>
 </body>
 </html>

@@ -29,6 +29,14 @@ const shippingCitySelect = document.getElementById('shipping-city');
 const calcShippingBtn = document.getElementById('calc-shipping-btn');
 const shippingCostDisplay = document.getElementById('shipping-cost-display');
 
+function notify(message, type = 'info') {
+    if (typeof window.showToast === 'function') {
+        window.showToast(message, type);
+        return;
+    }
+    alert(message);
+}
+
 // INIT
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
@@ -236,12 +244,12 @@ function toggleCart() {
 async function handleShippingCalc() {
     const city = shippingCitySelect?.value;
     if (!city) {
-        alert("Pilih kota tujuan pengiriman!");
+        notify("Pilih kota tujuan pengiriman!", 'error');
         return;
     }
     
     if (cart.length === 0) {
-        alert("Keranjang masih kosong.");
+        notify("Keranjang masih kosong.", 'error');
         return;
     }
     
@@ -283,7 +291,7 @@ async function handleShippingCalc() {
         
     } catch (e) {
         console.error("Gagal Request API Ongkir:", e);
-        alert("Gagal memuat harga pengiriman dari server API.");
+        notify("Gagal memuat harga pengiriman dari server API.", 'error');
     } finally {
         if(calcShippingBtn) {
             calcShippingBtn.textContent = 'Cek';
